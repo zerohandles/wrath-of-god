@@ -1,0 +1,31 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class EnemyPosition : MonoBehaviour
+{
+    private float xBoundary = 8.5f;
+    private bool isLeft;
+
+
+    void Update()
+    {
+        if (transform.rotation.y == 1 || transform.rotation.y == -1)
+        {
+            isLeft = true;
+        }
+        else if (transform.rotation.y == 0)
+        {
+            isLeft = false;
+        }
+
+        if (isLeft && transform.position.x <= -xBoundary)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+        if (!isLeft && transform.position.x >= xBoundary)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+    }
+}
