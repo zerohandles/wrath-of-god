@@ -28,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
             isStopped = true;
         }
 
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        transform.Translate(speed * Time.deltaTime * Vector2.right);
     }
 
 
