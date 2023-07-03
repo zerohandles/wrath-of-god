@@ -4,17 +4,6 @@ using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,11 +12,12 @@ public class BulletDamage : MonoBehaviour
             return;
         }
 
-        foreach (Enemy enemy in GameManager.instance.spawnManager.enemies)
+        foreach (Enemy enemy in GameManager.Instance.spawnManager.enemies)
         {
             if (collision.gameObject.CompareTag(enemy.tag))
             {
-                GameManager.instance.score += enemy.value;
+                GameManager.Instance.score += enemy.value;
+                OverlayUI.Instance.UpdateScore();
             }
         }
 

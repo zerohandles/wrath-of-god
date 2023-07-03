@@ -4,30 +4,27 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
+    public static GameManager Instance;
     public SpawnManager spawnManager;
 
-    public int score;
+    public float score;
+    public bool gameIsActive;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
-        else if (instance != null)
+        else if (Instance != null)
         {
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
 
         spawnManager = gameObject.GetComponent<SpawnManager>();
+        gameIsActive = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

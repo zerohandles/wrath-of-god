@@ -6,8 +6,9 @@ using UnityEngine;
 public class Enemy
 {
     public GameObject enemyPrefab;
-    public int value;
-    public float spawnRate;
+    public float value;
+    public float spawnDelay;
     public float spawnLimit;
     public string tag;
+
 }

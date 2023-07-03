@@ -6,44 +6,54 @@ public class EnemyMovement : MonoBehaviour
 {
     private float speed;
     private float moveTimer;
-    private float stopTimer;
     private bool isStopped = false;
 
     [SerializeField] private float maxSpeed = 1.5f;
     [SerializeField] private float minSpeed = .35f;
     [SerializeField] private float stopTimerMax = 8f;
     [SerializeField] private float stopTimerMin = 4f;
+    [SerializeField] private float moveTimerMax = 8f;
+    [SerializeField] private float moveTimerMin = 4f;
 
-    private void Start()
+    private void Awake()
     {
-        stopTimer = stopTimerMin;
-        InvokeRepeating(nameof(SetSpeed), 1, 5);
+        SetRandomSpeed();
+        SetMoveTimer();
     }
 
     void Update()
     {
-        stopTimer -= Time.deltaTime;
-        if (stopTimer <= 0)
+        if (isStopped)
+        {
+            return;
+        }
+
+        moveTimer -= Time.deltaTime;
+        if (moveTimer <= 0)
         {
             isStopped = true;
+            StartCoroutine(StopMovementTimer());
         }
 
         transform.Translate(speed * Time.deltaTime * Vector2.right);
     }
 
-
-    void SetSpeed()
+    IEnumerator StopMovementTimer()
     {
-        if (isStopped)
-        {
-            speed = 0;
-            stopTimer = Random.Range(stopTimerMin, stopTimerMax);
-            isStopped = false;
-        }
-        else
-        {
-            speed = Random.Range(minSpeed, maxSpeed);
-        }
+        yield return new WaitForSeconds(Random.Range(stopTimerMin, stopTimerMax));
+        SetRandomSpeed();
+        SetMoveTimer();
+        isStopped = false;
+    }
+
+    private void SetRandomSpeed()
+    {
+        speed = Random.Range(minSpeed, maxSpeed);
+    }
+
+    private void SetMoveTimer()
+    {
+        moveTimer = Random.Range(moveTimerMin, moveTimerMax);
     }
 
 }
