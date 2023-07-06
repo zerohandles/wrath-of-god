@@ -10,5 +10,6 @@ public class Enemy
     public float spawnDelay;
     public float spawnLimit;
     public string tag;
+    public GameObject deathEffect;
 
 }

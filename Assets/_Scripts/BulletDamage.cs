@@ -18,9 +18,10 @@ public class BulletDamage : MonoBehaviour
             {
                 GameManager.Instance.score += enemy.value;
                 OverlayUI.Instance.UpdateScore();
+                // GameObject effect = (GameObject)Instantiate(enemy.deathEffect, collision.transform.position, Quaternion.identity);
             }
         }
 
-        Destroy(collision.gameObject);
+        // Destroy(collision.gameObject);
     }
 }

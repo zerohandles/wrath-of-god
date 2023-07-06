@@ -7,6 +7,7 @@ public class EnemyMovement : MonoBehaviour
     private float speed;
     private float moveTimer;
     private bool isStopped = false;
+    private Animator animator;
 
     [SerializeField] private float maxSpeed = 1.5f;
     [SerializeField] private float minSpeed = .35f;
@@ -21,6 +22,12 @@ public class EnemyMovement : MonoBehaviour
         SetMoveTimer();
     }
 
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+        animator.SetFloat("speed", 1);
+    }
+
     void Update()
     {
         if (isStopped)
@@ -32,6 +39,7 @@ public class EnemyMovement : MonoBehaviour
         if (moveTimer <= 0)
         {
             isStopped = true;
+            animator.SetFloat("speed", 0);
             StartCoroutine(StopMovementTimer());
         }
 
@@ -44,6 +52,7 @@ public class EnemyMovement : MonoBehaviour
         SetRandomSpeed();
         SetMoveTimer();
         isStopped = false;
+        animator.SetFloat("speed", 1);
     }
 
     private void SetRandomSpeed()
