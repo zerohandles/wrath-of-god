@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 
 public class OverlayUI : MonoBehaviour
 {
-    public TextMeshProUGUI scoreText;
+    public Slider wrathBar;
 
     #region singleton
     public static OverlayUI Instance;
@@ -21,8 +22,14 @@ public class OverlayUI : MonoBehaviour
 
     #endregion
 
+    private void Start()
+    {
+        wrathBar.maxValue = GameManager.Instance.PointsToWin;
+        wrathBar.value = 0;
+    }
+
     public void UpdateScore()
     {
-        scoreText.text = $"Score: {GameManager.Instance.score}";
+        wrathBar.value = GameManager.Instance.score;
     }
 }

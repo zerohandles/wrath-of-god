@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public SpawnManager spawnManager;
 
     public float score;
+    public float PointsToWin { get; private set; }
+    [SerializeField] private float _pointsToWin;
     public bool gameIsActive;
 
     // Start is called before the first frame update
@@ -24,6 +26,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         spawnManager = gameObject.GetComponent<SpawnManager>();
+        PointsToWin = _pointsToWin;
         gameIsActive = true;
     }
 
