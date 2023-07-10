@@ -24,12 +24,12 @@ public class OverlayUI : MonoBehaviour
 
     private void Start()
     {
-        wrathBar.maxValue = GameManager.Instance.PointsToWin;
+        wrathBar.maxValue = GameManager.instance.PointsToWin;
         wrathBar.value = 0;
     }
 
     public void UpdateScore()
     {
-        wrathBar.value = GameManager.Instance.score;
+        wrathBar.value = GameManager.instance.score;
     }
 }

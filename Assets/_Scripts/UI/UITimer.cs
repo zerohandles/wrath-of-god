@@ -6,20 +6,19 @@ using TMPro;
 public class UITimer : MonoBehaviour
 {
     public TextMeshProUGUI timerText;
-    [SerializeField] private float timeRemaining = 5f;
+    public float TimeRemaining {get; private set; }
+    [SerializeField] private float m_TimeRemaining = 60;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+        TimeRemaining = m_TimeRemaining;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        timeRemaining -= Time.deltaTime;
-        timeRemaining = Mathf.Clamp(timeRemaining, 0.0f, Mathf.Infinity);
-        DisplayTime(timeRemaining);
+        TimeRemaining -= Time.deltaTime;
+        TimeRemaining = Mathf.Clamp(TimeRemaining, 0.0f, Mathf.Infinity);
+        DisplayTime(TimeRemaining);
     }
 
     void DisplayTime(float timeInSeconds)

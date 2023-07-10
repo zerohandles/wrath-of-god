@@ -28,7 +28,7 @@ public class SpawnManager : MonoBehaviour
     {
         yield return new WaitForSeconds(enemy.spawnDelay);
 
-        if (enemy.spawnLimit > GameObject.FindGameObjectsWithTag(enemy.tag).Length)
+        if (enemy.spawnLimit > GameObject.FindGameObjectsWithTag(enemy.tag).Length && !GameManager.instance.isGameOver)
         {
             int spawnLocation = Random.Range(0, 2);
 
