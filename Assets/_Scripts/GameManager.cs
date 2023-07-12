@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
+       // DontDestroyOnLoad(gameObject);
 
         spawnManager = gameObject.GetComponent<SpawnManager>();
         menuUI = gameObject.GetComponent<MenuUI>();

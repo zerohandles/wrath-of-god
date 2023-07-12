@@ -15,11 +15,13 @@ public class MenuUI : MonoBehaviour
     {
         if (!victory)
         {
+            nextButtonText.text = "Restart";
             menuTitleText.text = "GAME OVER";
             menuDescriptionText.text = "You failed to smite the non-believers\nbefore they spread their blasphemy.\nYou are no longer feared.";
         }
         else if (victory)
         {
+            nextButtonText.text = "Continue";
             menuTitleText.text = "Victory!";
             menuDescriptionText.text = "You have smote the non-believers, \nreducing them to smoldering craters.\n The world fears you again.";
         }
@@ -38,12 +40,10 @@ public class MenuUI : MonoBehaviour
         if(GameManager.instance.score < GameManager.instance.PointsToWin)
         {
             GameManager.instance.RestartLevel();
-            nextButtonText.text = "Restart";
         }
         else
         {
             GameManager.instance.LoadNextLevel();
-            nextButtonText.text = "Continue";
         }
     }
 }
