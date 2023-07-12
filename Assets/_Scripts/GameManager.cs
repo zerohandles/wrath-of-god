@@ -2,21 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public SpawnManager spawnManager;
-    public GameObject menuUI;
-    public TextMeshProUGUI menuTitleText;
-    public TextMeshProUGUI menuDescriptionText;
-    public GameObject menuBackground;
+    private MenuUI menuUI;
     private UITimer timer;
 
     public float PointsToWin { get; private set; }
     [SerializeField] private float m_pointsToWin;
     public float score;
-    
     public bool isGameOver;
 
 
@@ -34,6 +31,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         spawnManager = gameObject.GetComponent<SpawnManager>();
+        menuUI = gameObject.GetComponent<MenuUI>();
         PointsToWin = m_pointsToWin;
         isGameOver = false;
     }
@@ -56,18 +54,30 @@ public class GameManager : MonoBehaviour
     void GameOver()
     {
         isGameOver = true;
-        menuUI.SetActive(true);
-        menuBackground.SetActive(true);
 
         if(score < PointsToWin)
         {
-            menuTitleText.text = "GAME OVER";
-            menuDescriptionText.text = "You failed to smite the non-believers\nbefore they spread their blasphemy.\nYou are no longer feared.";
+            menuUI.SetGameOverText(false);
         }
         else if (score >= PointsToWin)
         {
-            menuTitleText.text = "Victory!";
-            menuDescriptionText.text = "You have smote the non-believes \nreducing them to smoking craters.\n The world fears you again.";
+            menuUI.SetGameOverText(true);
         }
+    }
+
+    public void Menu()
+    {
+        Debug.Log("Go to Menu");
+    }
+
+    public void LoadNextLevel()
+    {
+        Debug.Log("Load next level");
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Debug.Log("Restart level");
     }
 }
