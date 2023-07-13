@@ -8,4 +8,12 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: TutorialMenu
   m_Controller: {fileID: 9100000, guid: f6b5b90dc48e1dd41a3b9ac702452a0d, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 42612e086ec52f0419f151788fb2ce8e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: bcd452c23a590d343a0b65a130aabaff, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9f770b08e2ee8be40b4a7f57b5d437f0, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 268d1958dd0d3054abe0dc2a38b2af90, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 726f4fe044db0da4ea9d1464fdc71536, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 695c3917c93d92f4e9471e15cb26757b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1980042aef75ec149ade7f832419bd39, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 850d4856ec886b444ae6d142e74c4e14, type: 2}
