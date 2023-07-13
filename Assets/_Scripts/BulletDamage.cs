@@ -12,11 +12,11 @@ public class BulletDamage : MonoBehaviour
             return;
         }
 
-        foreach (Enemy enemy in GameManager.Instance.spawnManager.enemies)
+        foreach (Enemy enemy in GameManager.instance.spawnManager.enemies)
         {
             if (collision.gameObject.CompareTag(enemy.tag))
             {
-                GameManager.Instance.score += enemy.value;
+                GameManager.instance.score += enemy.value;
                 OverlayUI.Instance.UpdateScore();
                 // GameObject effect = (GameObject)Instantiate(enemy.deathEffect, collision.transform.position, Quaternion.identity);
             }
