@@ -6,18 +6,12 @@ using UnityEngine.SceneManagement;
 public class MainMenuUI : MonoBehaviour
 {
     public GameObject mainMenu;
+    public GameObject tutorialMenu;
     private Animator animator;
 
-    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void StartGameButton()
@@ -28,6 +22,11 @@ public class MainMenuUI : MonoBehaviour
     public void LevelSelectButton()
     {
         StartCoroutine(LevelSelect());
+    }
+
+    public void TutorialButton()
+    {
+        StartCoroutine(Tutorial());
     }
 
     public void QuitButton()
@@ -47,6 +46,14 @@ public class MainMenuUI : MonoBehaviour
         animator.SetTrigger("Close");
         yield return new WaitForSeconds(1);
         Debug.Log("Load Level Selection scene");
+    }
+
+    private IEnumerator Tutorial()
+    {
+        animator.SetTrigger("Close");
+        yield return new WaitForSeconds(1);
+        tutorialMenu.SetActive(true);
+        mainMenu.SetActive(false);
     }
 
     private IEnumerator QuitGame()
