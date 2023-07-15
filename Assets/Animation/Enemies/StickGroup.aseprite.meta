@@ -1,0 +1,1006 @@
+fileFormatVersion: 2
+guid: 92202ee249547734480f570e311c42c0
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: GroupChant
+    second: {fileID: 7400000, guid: 997b831c90ce77048a424cf94fb9f902, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: GroupWalk
+    second: {fileID: 7400000, guid: ca9c7690f507c3943817aac46b343ad6, type: 2}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 9
+    customPivotPosition: {x: 0.5, y: 0.25}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 9
+    customPivotPosition: {x: 0.5, y: 0.25}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638249622142755781
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: StickGroup_Frame_0
+    originalName: 
+    pivot: {x: 0.5041209, y: 0.45717132}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1269
+      y: 4
+      width: 728
+      height: 251
+    spriteID: a18f4c661d7f06142977109f2900e803
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 4}
+  - name: StickGroup_Frame_1
+    originalName: 
+    pivot: {x: 0.49648386, y: 0.45717132}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1269
+      y: 263
+      width: 711
+      height: 251
+    spriteID: 157fbc59ede0bab498a918bf0ab7475a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 263}
+  - name: StickGroup_Frame_2
+    originalName: 
+    pivot: {x: 0.50377077, y: 0.46084338}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1269
+      y: 2066
+      width: 663
+      height: 249
+    spriteID: 372828c0f9bb3174e851f306c6b263e5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 2066}
+  - name: StickGroup_Frame_3
+    originalName: 
+    pivot: {x: 0.51472867, y: 0.46084338}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1269
+      y: 2323
+      width: 645
+      height: 249
+    spriteID: 0f6757ad73c6e5441b76a0219d928527
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 2323}
+  - name: StickGroup_Frame_4
+    originalName: 
+    pivot: {x: 0.5303704, y: 0.46270162}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1269
+      y: 1810
+      width: 675
+      height: 248
+    spriteID: 4692e8257d67b154ba44b82e47a69cd1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 1810}
+  - name: StickGroup_Frame_5
+    originalName: 
+    pivot: {x: 0.5375552, y: 0.45900002}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1269
+      y: 1294
+      width: 679
+      height: 250
+    spriteID: a3aeac84f2f8fcd4888b47d256f4f5c7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 1294}
+  - name: StickGroup_Frame_6
+    originalName: 
+    pivot: {x: 0.5470588, y: 0.45900002}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1269
+      y: 1036
+      width: 680
+      height: 250
+    spriteID: 7c7fbbf16767a4e42acd67b0fce617b6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 1036}
+  - name: StickGroup_Frame_7
+    originalName: 
+    pivot: {x: 0.5348837, y: 0.46270162}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1269
+      y: 780
+      width: 688
+      height: 248
+    spriteID: 9b39a561d27bd7a48870930646a4b6ea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 780}
+  - name: StickGroup_Frame_8
+    originalName: 
+    pivot: {x: 0.54477614, y: 0.45900002}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1269
+      y: 1552
+      width: 670
+      height: 250
+    spriteID: 11bf3b2348aea854db17ccba7068f23e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 1552}
+  - name: StickGroup_Frame_9
+    originalName: 
+    pivot: {x: 0.505618, y: 0.45900002}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1269
+      y: 522
+      width: 712
+      height: 250
+    spriteID: 9438dfc997390e04c9c6fc76e6c4d82d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1269, y: 522}
+  - name: StickGroup_Frame_11
+    originalName: 
+    pivot: {x: 0.51355934, y: 0.30437666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 622
+      y: 1989
+      width: 590
+      height: 377
+    spriteID: f54ed75156bc9074193e46bbd340bd2a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 622, y: 1989}
+  - name: StickGroup_Frame_12
+    originalName: 
+    pivot: {x: 0.5215146, y: 0.32879654}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 622
+      y: 2759
+      width: 581
+      height: 349
+    spriteID: 72da84731f6b3f34499c23db68cdd389
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 622, y: 2759}
+  - name: StickGroup_Frame_13
+    originalName: 
+    pivot: {x: 0.5183333, y: 0.30437666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1828
+      width: 600
+      height: 377
+    spriteID: 6ef522b00fa53aa4c9ef64f853ff7c25
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1828}
+  - name: StickGroup_Frame_14
+    originalName: 
+    pivot: {x: 0.54590166, y: 0.25613838}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 610
+      height: 448
+    spriteID: 11d5236ee9b3a834d894c13571c72bf1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: StickGroup_Frame_15
+    originalName: 
+    pivot: {x: 0.5367762, y: 0.2927296}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 622
+      y: 4
+      width: 639
+      height: 392
+    spriteID: 6451f67d2d6a82a488ba260e24df0f1f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 622, y: 4}
+  - name: StickGroup_Frame_16
+    originalName: 
+    pivot: {x: 0.5183333, y: 0.30437666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2213
+      width: 600
+      height: 377
+    spriteID: efdb74a8affc15640a1c0dfd0ea8d720
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2213}
+  - name: StickGroup_Frame_17
+    originalName: 
+    pivot: {x: 0.54590166, y: 0.25613838}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 460
+      width: 610
+      height: 448
+    spriteID: 82047ca1f8146314995ae66b06c33d34
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 460}
+  - name: StickGroup_Frame_18
+    originalName: 
+    pivot: {x: 0.5367762, y: 0.2927296}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 622
+      y: 404
+      width: 639
+      height: 392
+    spriteID: b7445815a618ff24aa9742833787a810
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 622, y: 404}
+  - name: StickGroup_Frame_19
+    originalName: 
+    pivot: {x: 0.5183333, y: 0.30437666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2598
+      width: 600
+      height: 377
+    spriteID: f761bbf92c883c9449a0a894b2fc6511
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2598}
+  - name: StickGroup_Frame_20
+    originalName: 
+    pivot: {x: 0.5183333, y: 0.30437666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2983
+      width: 600
+      height: 377
+    spriteID: efcae106b5e43e142b810ea0a41ccff8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 2983}
+  - name: StickGroup_Frame_21
+    originalName: 
+    pivot: {x: 0.54590166, y: 0.25613838}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 916
+      width: 610
+      height: 448
+    spriteID: 45d974805b3530e429d3778efacf485b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 916}
+  - name: StickGroup_Frame_22
+    originalName: 
+    pivot: {x: 0.5367762, y: 0.2927296}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 622
+      y: 804
+      width: 639
+      height: 392
+    spriteID: 6c84831060283d24dbb9db2abf867b42
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 622, y: 804}
+  - name: StickGroup_Frame_23
+    originalName: 
+    pivot: {x: 0.5183333, y: 0.30437666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3368
+      width: 600
+      height: 377
+    spriteID: 05b38a9f8388f08449ee586d2eb66482
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3368}
+  - name: StickGroup_Frame_24
+    originalName: 
+    pivot: {x: 0.54590166, y: 0.25613838}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1372
+      width: 610
+      height: 448
+    spriteID: 5f499663025d88f46b7250c1e726427a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1372}
+  - name: StickGroup_Frame_25
+    originalName: 
+    pivot: {x: 0.5367762, y: 0.2927296}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 622
+      y: 1204
+      width: 639
+      height: 392
+    spriteID: bbf4153b5c7b64a4e94b5cc3cec27d07
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 622, y: 1204}
+  - name: StickGroup_Frame_26
+    originalName: 
+    pivot: {x: 0.5183333, y: 0.30437666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 622
+      y: 1604
+      width: 600
+      height: 377
+    spriteID: b7c4cfcfdca7d224ba66d764234e219f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 622, y: 1604}
+  - name: StickGroup_Frame_27
+    originalName: 
+    pivot: {x: 0.5215146, y: 0.32879654}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 622
+      y: 3116
+      width: 581
+      height: 349
+    spriteID: 00b7d6a11318a744cb15d925d7b6926e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 622, y: 3116}
+  - name: StickGroup_Frame_28
+    originalName: 
+    pivot: {x: 0.51355934, y: 0.30437666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 622
+      y: 2374
+      width: 590
+      height: 377
+    spriteID: c122d78159503c649bdb5c9db5bec06b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 622, y: 2374}
+  - name: StickGroup_Frame_30
+    originalName: 
+    pivot: {x: 1.1755724, y: 0.22382198}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3753
+      width: 131
+      height: 191
+    spriteID: b169e5b9c465a83419b1014eae50b978
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3753}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 974653217
+    name: StickGroup
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: StickGroup_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 8
+        y: -1
+        width: 728
+        height: 251
+      spriteId: a18f4c661d7f06142977109f2900e803
+    - name: StickGroup_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 22
+        y: -1
+        width: 711
+        height: 251
+      spriteId: 157fbc59ede0bab498a918bf0ab7475a
+    - name: StickGroup_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 41
+        y: -1
+        width: 663
+        height: 249
+      spriteId: 372828c0f9bb3174e851f306c6b263e5
+    - name: StickGroup_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 43
+        y: -1
+        width: 645
+        height: 249
+      spriteId: 0f6757ad73c6e5441b76a0219d928527
+    - name: StickGroup_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 17
+        y: -1
+        width: 675
+        height: 248
+      spriteId: 4692e8257d67b154ba44b82e47a69cd1
+    - name: StickGroup_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 10
+        y: -1
+        width: 679
+        height: 250
+      spriteId: a3aeac84f2f8fcd4888b47d256f4f5c7
+    - name: StickGroup_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 3
+        y: -1
+        width: 680
+        height: 250
+      spriteId: 7c7fbbf16767a4e42acd67b0fce617b6
+    - name: StickGroup_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 7
+        y: -1
+        width: 688
+        height: 248
+      spriteId: 9b39a561d27bd7a48870930646a4b6ea
+    - name: StickGroup_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 10
+        y: -1
+        width: 670
+        height: 250
+      spriteId: 11bf3b2348aea854db17ccba7068f23e
+    - name: StickGroup_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 15
+        y: -1
+        width: 712
+        height: 250
+      spriteId: 9438dfc997390e04c9c6fc76e6c4d82d
+    - name: StickGroup_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 72
+        y: -1
+        width: 590
+        height: 377
+      spriteId: f54ed75156bc9074193e46bbd340bd2a
+    - name: StickGroup_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 72
+        y: -1
+        width: 581
+        height: 349
+      spriteId: 72da84731f6b3f34499c23db68cdd389
+    - name: StickGroup_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 64
+        y: -1
+        width: 600
+        height: 377
+      spriteId: 6ef522b00fa53aa4c9ef64f853ff7c25
+    - name: StickGroup_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 42
+        y: -1
+        width: 610
+        height: 448
+      spriteId: 11d5236ee9b3a834d894c13571c72bf1
+    - name: StickGroup_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 32
+        y: -1
+        width: 639
+        height: 392
+      spriteId: 6451f67d2d6a82a488ba260e24df0f1f
+    - name: StickGroup_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 64
+        y: -1
+        width: 600
+        height: 377
+      spriteId: efdb74a8affc15640a1c0dfd0ea8d720
+    - name: StickGroup_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 42
+        y: -1
+        width: 610
+        height: 448
+      spriteId: 82047ca1f8146314995ae66b06c33d34
+    - name: StickGroup_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 32
+        y: -1
+        width: 639
+        height: 392
+      spriteId: b7445815a618ff24aa9742833787a810
+    - name: StickGroup_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 64
+        y: -1
+        width: 600
+        height: 377
+      spriteId: f761bbf92c883c9449a0a894b2fc6511
+    - name: StickGroup_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 64
+        y: -1
+        width: 600
+        height: 377
+      spriteId: efcae106b5e43e142b810ea0a41ccff8
+    - name: StickGroup_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 42
+        y: -1
+        width: 610
+        height: 448
+      spriteId: 45d974805b3530e429d3778efacf485b
+    - name: StickGroup_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 32
+        y: -1
+        width: 639
+        height: 392
+      spriteId: 6c84831060283d24dbb9db2abf867b42
+    - name: StickGroup_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 64
+        y: -1
+        width: 600
+        height: 377
+      spriteId: 05b38a9f8388f08449ee586d2eb66482
+    - name: StickGroup_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 42
+        y: -1
+        width: 610
+        height: 448
+      spriteId: 5f499663025d88f46b7250c1e726427a
+    - name: StickGroup_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 32
+        y: -1
+        width: 639
+        height: 392
+      spriteId: bbf4153b5c7b64a4e94b5cc3cec27d07
+    - name: StickGroup_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 64
+        y: -1
+        width: 600
+        height: 377
+      spriteId: b7c4cfcfdca7d224ba66d764234e219f
+    - name: StickGroup_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 72
+        y: -1
+        width: 581
+        height: 349
+      spriteId: 00b7d6a11318a744cb15d925d7b6926e
+    - name: StickGroup_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 72
+        y: -1
+        width: 590
+        height: 377
+      spriteId: c122d78159503c649bdb5c9db5bec06b
+    - name: StickGroup_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 221
+        y: 71
+        width: 131
+        height: 191
+      spriteId: b169e5b9c465a83419b1014eae50b978
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 750, y: 455}

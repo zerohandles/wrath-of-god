@@ -673,7 +673,7 @@ MonoBehaviour:
     value: 0
     spawnDelay: 10
     spawnLimit: 1
-    tag: Enemy3
+    tag: Cow
     deathEffect: {fileID: 1763583019978817091, guid: 775e00b2335620440b1d78c56d487ec1, type: 3}
   enemyContainer: {fileID: 1469980845}
 --- !u!1001 &1075286751

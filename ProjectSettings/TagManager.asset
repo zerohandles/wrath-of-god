@@ -7,8 +7,8 @@ TagManager:
   - Ground
   - Enemy1
   - Enemy2
-  - Enemy3
   - Lightning
+  - Cow
   layers:
   - Default
   - TransparentFX

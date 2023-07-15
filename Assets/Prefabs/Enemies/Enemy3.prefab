@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1999484276698405389}
   m_Layer: 0
   m_Name: Enemy3
-  m_TagString: Enemy3
+  m_TagString: Cow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,11 +32,11 @@ Transform:
   m_GameObject: {fileID: 1324233095715132567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -1.91, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4464603553121038151
 SpriteRenderer:
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 8131131303099754549, guid: 10e3cf3563c40d844b1a33039e80620d, type: 3}
-  m_Color: {r: 0.8584906, g: 0.79881823, b: 0.17412782, a: 1}
+  m_Sprite: {fileID: -8159428125040002664, guid: 91f5c36c99476644aafba715320c0398, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -106,8 +106,8 @@ MonoBehaviour:
   minSpeed: 0.5
   stopTimerMax: 8
   stopTimerMin: 4
-  moveTimerMax: 4
-  moveTimerMin: 1
+  moveTimerMax: 6
+  moveTimerMin: 3
 --- !u!114 &3602866073452192557
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ Animator:
   m_GameObject: {fileID: 1324233095715132567}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: dd3349bed0ece284ca2765db549121c1, type: 2}
+  m_Controller: {fileID: 9100000, guid: 3c1d4589093c3ea41ae636126d7dfbb0, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -200,9 +200,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.025000006, y: 1.25}
-  m_Size: {x: 0.64, y: 2.48}
-  m_Direction: 0
+  m_Offset: {x: 0.015564593, y: 1.2500008}
+  m_Size: {x: 2.5834734, y: 1.9985435}
+  m_Direction: 1
 --- !u!114 &1999484276698405389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,4 +215,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 697353cc5bfe043488b431e8758971e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathEffect: {fileID: 1763583019978817091, guid: 775e00b2335620440b1d78c56d487ec1, type: 3}
+  deathEffect: {fileID: 1113295150143457764, guid: aeb0bcbb6e9f74c499fbde9608813c62, type: 3}

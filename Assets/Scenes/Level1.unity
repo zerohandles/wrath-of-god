@@ -557,6 +557,91 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &529777458
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1573168427548829830, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600106427767959270, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600106427767959270, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600106427767959270, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600106427767959270, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600106427767959270, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600106427767959270, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600106427767959270, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600106427767959270, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600106427767959270, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600106427767959270, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600106427767959270, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974584727542114624, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_Size.x
+      value: 4.419022
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974584727542114624, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_Size.y
+      value: 2.3644
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974584727542114624, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.19512975
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974584727542114624, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_Offset.y
+      value: 1.213311
+      objectReference: {fileID: 0}
+    - target: {fileID: 5974584727542114624, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_Direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7902323185679621025, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
+      propertyPath: m_Name
+      value: Enemy2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
 --- !u!1 &746676095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,9 +1094,9 @@ MonoBehaviour:
     deathEffect: {fileID: 5796241256871321732, guid: 7c635994f806dfc48bff6a9fbba49ca0, type: 3}
   - enemyPrefab: {fileID: 1324233095715132567, guid: caae674fc9582264b938469d06c79631, type: 3}
     value: 250
-    spawnDelay: 2
+    spawnDelay: 3
     spawnLimit: 10
-    tag: Enemy3
+    tag: Cow
     deathEffect: {fileID: 5796241256871321732, guid: 7c635994f806dfc48bff6a9fbba49ca0, type: 3}
   enemyContainer: {fileID: 1469980845}
 --- !u!114 &1037698510
@@ -1027,7 +1112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1037698509}
-  m_pointsToWin: 500
+  m_pointsToWin: 10000
   score: 0
   isGameOver: 0
 --- !u!114 &1037698511
@@ -1056,7 +1141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1040649387}
-  m_TimeRemaining: 10
+  m_TimeRemaining: 120
 --- !u!114 &1037698513
 MonoBehaviour:
   m_ObjectHideFlags: 0
