@@ -8,15 +8,16 @@ using UnityEngine.UI;
 public class OverlayUI : MonoBehaviour
 {
     public Slider wrathBar;
+    public TextMeshProUGUI comboText;
 
     #region singleton
-    public static OverlayUI Instance;
+    public static OverlayUI instance;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (instance == null)
         {
-            Instance = this;
+            instance = this;
         }
     }
 
@@ -31,5 +32,11 @@ public class OverlayUI : MonoBehaviour
     public void UpdateScore()
     {
         wrathBar.value = GameManager.instance.score;
+    }
+
+    public void UpdateComboText()
+    {
+        float combo = Mathf.Round(GameManager.instance.combo * 100);
+        comboText.text = $"x{combo}";
     }
 }

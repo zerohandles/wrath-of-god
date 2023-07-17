@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8740725958819391394}
   - component: {fileID: 8508173125161504482}
   - component: {fileID: 4860347394842388080}
+  - component: {fileID: -4801930344531050179}
   - component: {fileID: 4748287871064184550}
   - component: {fileID: 322428393906026109}
   - component: {fileID: 6336329829872411944}
-  - component: {fileID: -4801930344531050179}
   m_Layer: 0
   m_Name: Enemy1
   m_TagString: Enemy1
@@ -120,6 +120,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f6ea64aa14ebb42a0ed9cd1da4159c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-4801930344531050179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2887278660025979316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697353cc5bfe043488b431e8758971e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffect: {fileID: 1763583019978817091, guid: 775e00b2335620440b1d78c56d487ec1, type: 3}
 --- !u!70 &4748287871064184550
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -203,16 +216,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-4801930344531050179
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2887278660025979316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 697353cc5bfe043488b431e8758971e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathEffect: {fileID: 1763583019978817091, guid: 775e00b2335620440b1d78c56d487ec1, type: 3}

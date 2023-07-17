@@ -14,10 +14,13 @@ public class GameManager : MonoBehaviour
     public float PointsToWin { get; private set; }
     [SerializeField] private float m_pointsToWin;
     public float score;
+    public float combo = 0;
+    [SerializeField] private float comboTimeLimit = 1;
+    public float comboTimer = 0;
+
     public bool isGameOver;
 
 
-    // Start is called before the first frame update
     void Awake()
     {
         if (instance == null)
@@ -48,6 +51,14 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+
+        // Reset combo timer if new enemies aren't killed fast enough
+        comboTimer += Time.deltaTime;
+        if (comboTimer > comboTimeLimit)
+        {
+            combo = 0;
+            OverlayUI.instance.UpdateComboText();
+        }
     }
 
 
@@ -63,21 +74,5 @@ public class GameManager : MonoBehaviour
         {
             menuUI.SetGameOverText(true);
         }
-    }
-
-    public void Menu()
-    {
-        SceneManager.LoadScene("MainMenu");
-    }
-
-    public void LoadNextLevel()
-    {
-        Debug.Log("Load next level");
-    }
-
-    public void RestartLevel()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Debug.Log("Restart level");
     }
 }

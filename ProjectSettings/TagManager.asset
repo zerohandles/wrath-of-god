@@ -6,9 +6,9 @@ TagManager:
   tags:
   - Ground
   - Enemy1
-  - Enemy2
   - Lightning
   - Cow
+  - Crowd
   layers:
   - Default
   - TransparentFX

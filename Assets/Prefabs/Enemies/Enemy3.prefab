@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 4464603553121038151}
   - component: {fileID: 8571324126418947541}
   - component: {fileID: 3602866073452192557}
+  - component: {fileID: 1999484276698405389}
   - component: {fileID: 3583554431375308553}
   - component: {fileID: 2179252104547874546}
   - component: {fileID: 7528694330139836781}
-  - component: {fileID: 1999484276698405389}
   m_Layer: 0
   m_Name: Enemy3
   m_TagString: Cow
@@ -120,6 +120,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f6ea64aa14ebb42a0ed9cd1da4159c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1999484276698405389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324233095715132567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697353cc5bfe043488b431e8758971e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffect: {fileID: 1113295150143457764, guid: aeb0bcbb6e9f74c499fbde9608813c62, type: 3}
 --- !u!50 &3583554431375308553
 Rigidbody2D:
   serializedVersion: 4
@@ -203,16 +216,3 @@ CapsuleCollider2D:
   m_Offset: {x: 0.015564593, y: 1.2500008}
   m_Size: {x: 2.5834734, y: 1.9985435}
   m_Direction: 1
---- !u!114 &1999484276698405389
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1324233095715132567}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 697353cc5bfe043488b431e8758971e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathEffect: {fileID: 1113295150143457764, guid: aeb0bcbb6e9f74c499fbde9608813c62, type: 3}

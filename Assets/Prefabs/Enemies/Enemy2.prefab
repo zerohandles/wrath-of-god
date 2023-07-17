@@ -12,13 +12,13 @@ GameObject:
   - component: {fileID: 1573168427548829830}
   - component: {fileID: 2877838872556753823}
   - component: {fileID: 2274928243700430559}
+  - component: {fileID: -1981549294429287746}
   - component: {fileID: 5500182777263175882}
   - component: {fileID: 5106236720582742349}
   - component: {fileID: 5974584727542114624}
-  - component: {fileID: -1981549294429287746}
   m_Layer: 0
   m_Name: Enemy2
-  m_TagString: Enemy2
+  m_TagString: Crowd
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -89,7 +89,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
 --- !u!114 &2877838872556753823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +120,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f6ea64aa14ebb42a0ed9cd1da4159c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1981549294429287746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7902323185679621025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 697353cc5bfe043488b431e8758971e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathEffect: {fileID: 8515167230294833995, guid: b4a176f081afcc1488d89a45543b74dc, type: 3}
 --- !u!50 &5500182777263175882
 Rigidbody2D:
   serializedVersion: 4
@@ -200,19 +213,6 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.025000006, y: 1.25}
-  m_Size: {x: 0.64, y: 2.48}
-  m_Direction: 0
---- !u!114 &-1981549294429287746
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7902323185679621025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 697353cc5bfe043488b431e8758971e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deathEffect: {fileID: 8515167230294833995, guid: b4a176f081afcc1488d89a45543b74dc, type: 3}
+  m_Offset: {x: -0.4014049, y: 0.2438217}
+  m_Size: {x: 4.831574, y: 2.735698}
+  m_Direction: 1

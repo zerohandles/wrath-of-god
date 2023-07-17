@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
+    private bool hitEnemy = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -16,12 +17,29 @@ public class BulletDamage : MonoBehaviour
         {
             if (collision.gameObject.CompareTag(enemy.tag))
             {
-                GameManager.instance.score += enemy.value;
-                OverlayUI.Instance.UpdateScore();
-                // GameObject effect = (GameObject)Instantiate(enemy.deathEffect, collision.transform.position, Quaternion.identity);
+                GameManager.instance.combo += .01f;
+                GameManager.instance.score += enemy.value * (1 + GameManager.instance.combo);
+                GameManager.instance.comboTimer = 0;
+                OverlayUI.instance.UpdateScore();
+                OverlayUI.instance.UpdateComboText();
+                hitEnemy = true;
             }
         }
+    }
 
-        // Destroy(collision.gameObject);
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log("Explode");
+
+            if (!hitEnemy)
+            {
+                GameManager.instance.combo = 0;
+                OverlayUI.instance.UpdateComboText();
+            }
+            // Use object pooling for lightning bolts
+            Destroy(gameObject);
+        }
     }
 }

@@ -17,17 +17,6 @@ public class BulletMove : MonoBehaviour
             Destroy(gameObject);
         }
 
-        transform.Translate(Vector2.down * speed * Time.deltaTime, Space.Self);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            Debug.Log("Explode");
-
-            // Use object pooling for lightning bolts
-            Destroy(gameObject);
-        }
+        transform.Translate(speed * Time.deltaTime * Vector2.down, Space.Self);
     }
 }

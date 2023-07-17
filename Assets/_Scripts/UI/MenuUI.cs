@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class MenuUI : MonoBehaviour
 {
@@ -32,18 +33,18 @@ public class MenuUI : MonoBehaviour
 
     public void MenuButton()
     {
-        GameManager.instance.Menu();
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void NextButton()
     {
         if(GameManager.instance.score < GameManager.instance.PointsToWin)
         {
-            GameManager.instance.RestartLevel();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         else
         {
-            GameManager.instance.LoadNextLevel();
+            Debug.Log("Load next level");
         }
     }
 }
