@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float m_pointsToWin;
     public float score;
     public float combo = 0;
-    [SerializeField] private float comboTimeLimit = 1;
+    [SerializeField] private float comboTimeLimit = 1.5f;
     public float comboTimer = 0;
 
     public bool isGameOver;
@@ -74,5 +74,10 @@ public class GameManager : MonoBehaviour
         {
             menuUI.SetGameOverText(true);
         }
+    }
+
+    public void ChangeScore(Enemy enemy)
+    {
+        score += enemy.value * (1 + combo);
     }
 }

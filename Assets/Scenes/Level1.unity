@@ -675,7 +675,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &843144910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1142,8 +1142,8 @@ MonoBehaviour:
   enemies:
   - enemyPrefab: {fileID: 2887278660025979316, guid: 3a1d035fd97018c428a9ec61e5ac2ff8, type: 3}
     value: 100
-    spawnDelay: 0.5
-    spawnLimit: 20
+    spawnDelay: 0.3
+    spawnLimit: 25
     tag: Enemy1
     deathEffect: {fileID: 5796241256871321732, guid: 7c635994f806dfc48bff6a9fbba49ca0, type: 3}
   - enemyPrefab: {fileID: 7902323185679621025, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
@@ -1172,10 +1172,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1037698509}
-  m_pointsToWin: 100000
+  m_pointsToWin: 50000
   score: 0
   combo: 0
-  comboTimeLimit: 1
+  comboTimeLimit: 1.5
   comboTimer: 0
   isGameOver: 0
 --- !u!114 &1037698511
@@ -2089,7 +2089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1910695533
 RectTransform:
   m_ObjectHideFlags: 0
