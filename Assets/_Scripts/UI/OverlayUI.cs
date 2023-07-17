@@ -9,6 +9,8 @@ public class OverlayUI : MonoBehaviour
 {
     public Slider wrathBar;
     public TextMeshProUGUI comboText;
+    public GameObject levelHeader;
+    private float titleOnScreenTimer = 4f;
 
     #region singleton
     public static OverlayUI instance;
@@ -27,6 +29,14 @@ public class OverlayUI : MonoBehaviour
     {
         wrathBar.maxValue = GameManager.instance.PointsToWin;
         wrathBar.value = 0;
+        StartCoroutine(DisplayTitleBanner());
+    }
+
+    private IEnumerator DisplayTitleBanner()
+    {
+        levelHeader.SetActive(true);
+        yield return new WaitForSeconds(titleOnScreenTimer);
+        levelHeader.SetActive(false);
     }
 
     public void UpdateScore()

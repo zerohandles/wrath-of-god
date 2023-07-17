@@ -1,0 +1,444 @@
+fileFormatVersion: 2
+guid: 665c432c52c2e4e459606e388677c143
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: 0
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI_Banners&Headers_0
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 479
+        width: 387
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da79143a0539e494e88510bbfe9c6e3f
+      internalID: -437721184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Banners&Headers_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 443
+        width: 390
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f4b5974501276e47ba3492bdcbf82d5
+      internalID: 986633577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Banners&Headers_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 394
+        width: 355
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa605c3526fe834e8a11d1f50cf540a
+      internalID: -1207698130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Banners&Headers_3
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 348
+        width: 345
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb774d66be5ff864fb91be4389c2ad00
+      internalID: -919946938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Banners&Headers_4
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 273
+        width: 317
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 276a7a5480c54814abf550b40941a929
+      internalID: 534515056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Banners&Headers_5
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 206
+        width: 362
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea59ceb0aa42d7142a1a05e5760a6895
+      internalID: 1705461873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Banners&Headers_6
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 151
+        width: 296
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81e987f59d2e59b42a79f4b46f567163
+      internalID: -1553912459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Banners&Headers_7
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 103
+        width: 27
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2c5ed99a25de004088e3f167d2b13fb
+      internalID: -380911974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Banners&Headers_8
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 103
+        width: 276
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd42f5ad032a358498937e5bace0849c
+      internalID: 181717254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Banners&Headers_9
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 103
+        width: 30
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8da471bd906a70a43859ec76e0fe4754
+      internalID: -88039128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Banners&Headers_10
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 53
+        width: 289
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79056cb37bb5d9c4e89bdab3859390df
+      internalID: -190043230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Banners&Headers_11
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 8
+        width: 289
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f330ac92ba8cc2a4b9a57a438b0d1d10
+      internalID: 1301151615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -201, y: 222}
+      - {x: -201, y: 251}
+      - {x: 188, y: 250}
+      - {x: 188, y: 222}
+    - - {x: -202, y: 186}
+      - {x: -202, y: 219}
+      - {x: 190, y: 219}
+      - {x: 190, y: 186}
+    - - {x: -187, y: 137}
+      - {x: -187, y: 182}
+      - {x: 173, y: 182}
+      - {x: 173, y: 137}
+    - - {x: -180, y: 90}
+      - {x: -180, y: 129}
+      - {x: 171, y: 129}
+      - {x: 171, y: 90}
+    - - {x: -167, y: 16}
+      - {x: -167, y: 82}
+      - {x: 159, y: 82}
+      - {x: 159, y: 16}
+    - - {x: -252, y: -53}
+      - {x: -252, y: -7}
+      - {x: 116, y: -7}
+      - {x: 116, y: -53}
+    - - {x: -250, y: -107}
+      - {x: -250, y: -60}
+      - {x: 50, y: -60}
+      - {x: 50, y: -107}
+    - - {x: -249, y: -156}
+      - {x: -249, y: -115}
+      - {x: 61, y: -115}
+      - {x: 61, y: -156}
+    - - {x: -249, y: -205}
+      - {x: -249, y: -162}
+      - {x: 46, y: -162}
+      - {x: 46, y: -205}
+    - - {x: -247, y: -250}
+      - {x: -247, y: -210}
+      - {x: 45, y: -210}
+      - {x: 45, y: -250}
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      UI_Banners&Headers_0: -437721184
+      UI_Banners&Headers_1: 986633577
+      UI_Banners&Headers_10: -190043230
+      UI_Banners&Headers_11: 1301151615
+      UI_Banners&Headers_2: -1207698130
+      UI_Banners&Headers_3: -919946938
+      UI_Banners&Headers_4: 534515056
+      UI_Banners&Headers_5: 1705461873
+      UI_Banners&Headers_6: -1553912459
+      UI_Banners&Headers_7: -380911974
+      UI_Banners&Headers_8: 181717254
+      UI_Banners&Headers_9: -88039128
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
