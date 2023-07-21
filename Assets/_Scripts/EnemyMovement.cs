@@ -7,7 +7,9 @@ public class EnemyMovement : MonoBehaviour
     private float speed;
     private float moveTimer;
     private bool isStopped = false;
+    
     private Animator animator;
+    private Rigidbody2D rb;
 
     [SerializeField] private float maxSpeed = 1.5f;
     [SerializeField] private float minSpeed = .35f;
@@ -26,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         animator.SetFloat("speed", 1);
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -65,4 +68,27 @@ public class EnemyMovement : MonoBehaviour
         moveTimer = Random.Range(moveTimerMin, moveTimerMax);
     }
 
+    void EndTornadoEfect()
+    {
+        rb.velocity = Vector3.zero;
+        transform.rotation = Quaternion.identity;
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if(!collision.transform.CompareTag("Tornado"))
+        {
+            return;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (!collision.transform.CompareTag("Tornado"))
+        {
+            return;
+        }
+
+        EndTornadoEfect();
+    }
 }

@@ -20,7 +20,6 @@ public class GameManager : MonoBehaviour
 
     public bool isGameOver;
 
-
     void Awake()
     {
         if (instance == null)
@@ -31,7 +30,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-       // DontDestroyOnLoad(gameObject);
 
         spawnManager = gameObject.GetComponent<SpawnManager>();
         menuUI = gameObject.GetComponent<MenuUI>();
@@ -43,7 +41,6 @@ public class GameManager : MonoBehaviour
     {
         timer = GetComponent<UITimer>();
     }
-
 
     private void Update()
     {
@@ -60,7 +57,6 @@ public class GameManager : MonoBehaviour
             OverlayUI.instance.UpdateComboText();
         }
     }
-
 
     void GameOver()
     {
@@ -79,5 +75,14 @@ public class GameManager : MonoBehaviour
     public void ChangeScore(Enemy enemy)
     {
         score += enemy.value * (1 + combo);
+    }
+
+    public void EnemyDeath(Enemy enemy)
+    {
+        combo += .01f;
+        ChangeScore(enemy);
+        comboTimer = 0;
+        OverlayUI.instance.UpdateScore();
+        OverlayUI.instance.UpdateComboText();
     }
 }

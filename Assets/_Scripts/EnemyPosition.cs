@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPosition : MonoBehaviour
 {
-    private float xBoundary = 8.5f;
+    private readonly float xBoundary = 8.5f;
     private bool isLeft;
 
 

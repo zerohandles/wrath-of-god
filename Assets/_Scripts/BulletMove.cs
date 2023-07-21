@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletMove : MonoBehaviour
 {
     public float speed;
-    private float lifeTime = 3f;
+    private readonly float lifeTime = 3f;
     private float timer;
 
     void Update()

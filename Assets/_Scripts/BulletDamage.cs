@@ -17,11 +17,7 @@ public class BulletDamage : MonoBehaviour
         {
             if (collision.gameObject.CompareTag(enemy.tag))
             {
-                GameManager.instance.combo += .01f;
-                GameManager.instance.ChangeScore(enemy);
-                GameManager.instance.comboTimer = 0;
-                OverlayUI.instance.UpdateScore();
-                OverlayUI.instance.UpdateComboText();
+                GameManager.instance.EnemyDeath(enemy);
                 hitEnemy = true;
             }
         }

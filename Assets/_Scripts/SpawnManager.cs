@@ -7,8 +7,8 @@ public class SpawnManager : MonoBehaviour
     public Enemy[] enemies;
     public GameObject enemyContainer;
 
-    private float xBoundary = 9.5f;
-    private float groundOffset = -2.3f;
+    private readonly float xBoundary = 9.5f;
+    private readonly float groundOffset = -2.3f;
 
     private Vector2 spawnPos1;
     private Vector2 spawnPos2;
