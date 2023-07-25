@@ -15,6 +15,7 @@ public class Tornado : MonoBehaviour
         if(timer > lifetime)
         {
             DisableAllColliders();
+            Destroy(gameObject, 1f);
         }
     }
 

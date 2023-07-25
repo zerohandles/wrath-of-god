@@ -18,6 +18,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float moveTimerMax = 8f;
     [SerializeField] private float moveTimerMin = 4f;
 
+    private readonly float floodWall = -8;
+
     private void Awake()
     {
         SetRandomSpeed();
@@ -76,19 +78,26 @@ public class EnemyMovement : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if(!collision.transform.CompareTag("Tornado"))
+        if(collision.transform.CompareTag("Flood"))
         {
-            return;
+            if (transform.position.x < floodWall)
+            {
+                transform.position = new Vector2(floodWall, transform.position.y);
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.transform.CompareTag("Tornado"))
+        if (collision.transform.CompareTag("Tornado"))
         {
-            return;
+            EndTornadoEfect();
         }
 
-        EndTornadoEfect();
+        if (collision.transform.CompareTag("Flood"))
+        {
+            rb.velocity = Vector3.zero;
+        }
+
     }
 }

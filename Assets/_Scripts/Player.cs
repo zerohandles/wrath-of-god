@@ -5,14 +5,16 @@ using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject lightningBolt;
-    [SerializeField]
-    private GameObject firePoint;
+    [SerializeField] private GameObject lightningBolt;
+    [SerializeField] private GameObject firePoint;
+    [SerializeField] private float fireRate = 0.1f;
+    private float timer;
+
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        timer += Time.deltaTime;
+        if (Input.GetMouseButtonDown(0) && fireRate <= timer)
         {
             if (EventSystem.current.IsPointerOverGameObject())
             {
@@ -20,6 +22,7 @@ public class Player : MonoBehaviour
             }
 
             ShootLightning();
+            timer = 0f;
         }
     }
 

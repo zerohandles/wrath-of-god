@@ -6,6 +6,17 @@ public class BulletDamage : MonoBehaviour
 {
     private bool hitEnemy = false;
 
+    public GameObject explosionPoint;
+    public GameObject explosionEffect;
+
+    private GameObject effectsContainer;
+
+
+    private void Start()
+    {
+        effectsContainer = GameObject.Find("Effects");
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.transform.GetComponent<EnemyMovement>())
@@ -28,6 +39,10 @@ public class BulletDamage : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             Debug.Log("Explode");
+            GameObject effect  = (GameObject)Instantiate(explosionEffect, explosionPoint.transform.position, Quaternion.identity);
+            effect.transform.SetParent(effectsContainer.transform);
+            // I'll probably want to pool these effects too
+            Destroy(effect, 1f);
 
             if (!hitEnemy)
             {
