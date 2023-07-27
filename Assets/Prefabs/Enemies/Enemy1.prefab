@@ -37,7 +37,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8740725958819391394
 SpriteRenderer:
@@ -166,8 +166,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.025000006, y: 1.25}
-  m_Size: {x: 0.64, y: 2.48}
+  m_Offset: {x: -0.028015733, y: 0.3636012}
+  m_Size: {x: 0.7460315, y: 2.4101133}
   m_Direction: 0
 --- !u!50 &322428393906026109
 Rigidbody2D:
@@ -195,7 +195,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &6336329829872411944
 Animator:
   serializedVersion: 5
@@ -232,7 +232,7 @@ CapsuleCollider2D:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 512
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
@@ -249,6 +249,6 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.025000006, y: 1.25}
-  m_Size: {x: 0.64, y: 2.48}
+  m_Offset: {x: -0.010344148, y: 0.3493843}
+  m_Size: {x: 0.71068835, y: 2.3816795}
   m_Direction: 0

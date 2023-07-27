@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class Flood : MonoBehaviour
 {
-    [SerializeField] float startingYPos = -6.5f;
-    [SerializeField] float maxYPos = 0.3f;
+    private Vector3 startingPos = new Vector3(0, -6.5f, 0);
+    [SerializeField] Vector3 endPos = new Vector3 (0, 0.3f, 0);
     [SerializeField] float speed;
 
-    private readonly float timeAtMaxHeight = 3;
-    private bool maxHeightReached = false;
+    private readonly float pauseTime = 3;
+    private bool isRising = false;
     private Vector3 target;
 
 
     void OnEnable()
     {
-        transform.position = new Vector3(0, startingYPos, 0);
-        target = new Vector3(0, maxYPos,0);
-        maxHeightReached = false;
+        transform.position = startingPos;
+        target = endPos;
+        isRising = false;
     }
 
     void Update()
@@ -25,16 +25,22 @@ public class Flood : MonoBehaviour
         var step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, step);
 
-        if (Vector3.Distance(transform.position, target) < 0.01f && !maxHeightReached)
+        if (Vector3.Distance(transform.position, target) < 0.0001f && !isRising)
         {
-            maxHeightReached = true;
+            isRising = true;
             StartCoroutine(PauseMovement());
+
+            if (target == startingPos)
+            {
+                gameObject.SetActive(false);
+            }
         }
     }
 
     IEnumerator PauseMovement()
     {
-        yield return new WaitForSeconds(3);
-        target = new Vector3(0, startingYPos, timeAtMaxHeight);
+        yield return new WaitForSeconds(pauseTime);
+        target = startingPos;
+        isRising = false;
     }
 }

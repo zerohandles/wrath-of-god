@@ -11,6 +11,7 @@ TagManager:
   - Crowd
   - Tornado
   - Flood
+  - Explosion
   layers:
   - Default
   - TransparentFX

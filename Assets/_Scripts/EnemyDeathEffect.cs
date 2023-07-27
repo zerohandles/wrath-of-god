@@ -17,7 +17,7 @@ public class EnemyDeathEffect : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.CompareTag("Lightning"))
+        if (collision.gameObject.CompareTag("Lightning") || collision.gameObject.CompareTag("Explosion"))
         {
             rend.enabled = false;
             GameObject effect = (GameObject)Instantiate(deathEffect, gameObject.transform.position, Quaternion.identity);
