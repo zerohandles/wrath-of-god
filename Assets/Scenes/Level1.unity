@@ -572,53 +572,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &581073018
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 581073020}
-  - component: {fileID: 581073019}
-  m_Layer: 0
-  m_Name: MeteorStorm
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &581073019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581073018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbcef6eab8ddb5548bf3d1eb81d8b76a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meteorSpawnDelay: 1
-  meteorStormTimer: 5
-  meteor: {fileID: 4258763135012613387, guid: cf976c7c1e7904642a7ff00ddb2a727a, type: 3}
---- !u!4 &581073020
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 581073018}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 7.81, z: -0.02188435}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &746676095
 GameObject:
   m_ObjectHideFlags: 0
@@ -1198,18 +1151,32 @@ MonoBehaviour:
     spawnLimit: 25
     tag: Enemy1
     deathEffect: {fileID: 5796241256871321732, guid: 7c635994f806dfc48bff6a9fbba49ca0, type: 3}
+    totalSpawned: 0
+    maxSpawnable: Infinity
   - enemyPrefab: {fileID: 7902323185679621025, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
     value: 500
     spawnDelay: 10
     spawnLimit: 2
     tag: Crowd
     deathEffect: {fileID: 5796241256871321732, guid: 7c635994f806dfc48bff6a9fbba49ca0, type: 3}
+    totalSpawned: 0
+    maxSpawnable: Infinity
   - enemyPrefab: {fileID: 1324233095715132567, guid: caae674fc9582264b938469d06c79631, type: 3}
     value: 250
     spawnDelay: 3
     spawnLimit: 10
     tag: Cow
     deathEffect: {fileID: 5796241256871321732, guid: 7c635994f806dfc48bff6a9fbba49ca0, type: 3}
+    totalSpawned: 0
+    maxSpawnable: Infinity
+  - enemyPrefab: {fileID: 2806725760256068618, guid: cc8f37793da659e4d8694da6d337e8e0, type: 3}
+    value: -5000
+    spawnDelay: 1
+    spawnLimit: 1
+    tag: Innocent
+    deathEffect: {fileID: 2246043463863409642, guid: 10c6977415663b44e96ee9ae77a17206, type: 3}
+    totalSpawned: 0
+    maxSpawnable: 50
   enemyContainer: {fileID: 1469980845}
 --- !u!114 &1037698510
 MonoBehaviour:
@@ -2589,6 +2556,67 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1895245567904869912
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1338022372188704443, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338022372188704443, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338022372188704443, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338022372188704443, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.02188435
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338022372188704443, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338022372188704443, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338022372188704443, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338022372188704443, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338022372188704443, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338022372188704443, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1338022372188704443, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2946539238914397353, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
+      propertyPath: m_Name
+      value: MeteorStorm
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
 --- !u!1001 &2248791449900749371
 PrefabInstance:
   m_ObjectHideFlags: 0

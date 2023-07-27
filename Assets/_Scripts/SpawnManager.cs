@@ -26,6 +26,11 @@ public class SpawnManager : MonoBehaviour
 
     IEnumerator SpawnEnemy(Enemy enemy)
     {
+        if (enemy.totalSpawned >= enemy.maxSpawnable)
+        {
+            yield break;
+        }
+
         yield return new WaitForSeconds(enemy.spawnDelay);
 
         if (enemy.spawnLimit > GameObject.FindGameObjectsWithTag(enemy.tag).Length && !GameManager.instance.isGameOver)
@@ -43,6 +48,7 @@ public class SpawnManager : MonoBehaviour
                 obj.transform.SetParent(enemyContainer.transform);
             }
         }
+        enemy.totalSpawned += 1;
 
         StartCoroutine(SpawnEnemy(enemy));
     }

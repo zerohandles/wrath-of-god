@@ -11,5 +11,7 @@ public class Enemy
     public float spawnLimit;
     public string tag;
     public GameObject deathEffect;
+    public float totalSpawned;
+    public float maxSpawnable = Mathf.Infinity;
 
 }

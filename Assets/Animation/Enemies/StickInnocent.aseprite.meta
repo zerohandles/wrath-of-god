@@ -1,0 +1,1034 @@
+fileFormatVersion: 2
+guid: 2da4bd22d342b4d4b820a7354b3c362b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Chant
+    second: {fileID: 7400000, guid: 5ed09f044275f6340b183f3973c527d0, type: 2}
+  - first:
+      type: UnityEngine:AnimationClip
+      assembly: UnityEngine.AnimationModule
+      name: Walk
+    second: {fileID: 7400000, guid: 203f4b71d97051d46867aa76e7898bab, type: 2}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 9
+    customPivotPosition: {x: 0.5, y: 0.25}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 9
+    customPivotPosition: {x: 0.5, y: 0.25}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638260739958206333
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: StickInnocent_Frame_0
+    originalName: 
+    pivot: {x: 0.4431818, y: 0.43602693}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 311
+      width: 264
+      height: 297
+    spriteID: a4559022ba41dfe439bdb837365ad7cd
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 311}
+  - name: StickInnocent_Frame_1
+    originalName: 
+    pivot: {x: 0.44401547, y: 0.4375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 616
+      width: 259
+      height: 296
+    spriteID: 4799fc2b73cf9c241932463119cc9654
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 616}
+  - name: StickInnocent_Frame_2
+    originalName: 
+    pivot: {x: 0.5418327, y: 0.43898305}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1718
+      width: 251
+      height: 295
+    spriteID: d83fc646e9cf79d4cbe11052c4bc95f6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1718}
+  - name: StickInnocent_Frame_3
+    originalName: 
+    pivot: {x: 0.5918367, y: 0.44965276}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 652
+      y: 304
+      width: 245
+      height: 288
+    spriteID: 3a598a1c9838add49bcb463eaa5bf125
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 652, y: 304}
+  - name: StickInnocent_Frame_4
+    originalName: 
+    pivot: {x: 0.58964145, y: 0.44349316}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 652
+      y: 4
+      width: 251
+      height: 292
+    spriteID: 8ead811f37449624686baed94ace1eea
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 652, y: 4}
+  - name: StickInnocent_Frame_5
+    originalName: 
+    pivot: {x: 0.58677685, y: 0.44501716}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 652
+      y: 600
+      width: 242
+      height: 291
+    spriteID: e9881e01ed2ee844bb0ce403840c8308
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 652, y: 600}
+  - name: StickInnocent_Frame_6
+    originalName: 
+    pivot: {x: 0.5930736, y: 0.44349316}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 652
+      y: 1508
+      width: 231
+      height: 292
+    spriteID: 3de9f3cb651a0a24bb14d34b1ff5b919
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 652, y: 1508}
+  - name: StickInnocent_Frame_7
+    originalName: 
+    pivot: {x: 0.5470086, y: 0.4375}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 652
+      y: 899
+      width: 234
+      height: 296
+    spriteID: 0df435e1252659440bee01b170a93e43
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 652, y: 899}
+  - name: StickInnocent_Frame_8
+    originalName: 
+    pivot: {x: 0.6043478, y: 0.43602693}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 652
+      y: 1203
+      width: 230
+      height: 297
+    spriteID: 235bff60d5992e640803260b150b84bb
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 652, y: 1203}
+  - name: StickInnocent_Frame_9
+    originalName: 
+    pivot: {x: 0.4754717, y: 0.43311036}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 265
+      height: 299
+    spriteID: 23e6470ba1f0b7f4698de45a1b93bff6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: StickInnocent_Frame_11
+    originalName: 
+    pivot: {x: 0.50340134, y: 0.3444149}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 911
+      y: 1540
+      width: 147
+      height: 376
+    spriteID: 8c72228c6bba26e4c8e9da83b4707fce
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 911, y: 1540}
+  - name: StickInnocent_Frame_12
+    originalName: 
+    pivot: {x: 0.5362319, y: 0.37212643}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 479
+      y: 1682
+      width: 138
+      height: 348
+    spriteID: 95d71c6677b7a4946a7bfec95875836e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 479, y: 1682}
+  - name: StickInnocent_Frame_13
+    originalName: 
+    pivot: {x: 0.516129, y: 0.3444149}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 479
+      y: 914
+      width: 155
+      height: 376
+    spriteID: b81c24089e6995b4990d5020e187b4c5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 479, y: 914}
+  - name: StickInnocent_Frame_14
+    originalName: 
+    pivot: {x: 0.6181818, y: 0.28970915}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 277
+      y: 802
+      width: 165
+      height: 447
+    spriteID: ea0215adc256ebe4d8425a32404dc41e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 277, y: 802}
+  - name: StickInnocent_Frame_15
+    originalName: 
+    pivot: {x: 0.57731956, y: 0.33120203}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 920
+      width: 194
+      height: 391
+    spriteID: d95bcf96f1389374fa6eff5225074da0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 920}
+  - name: StickInnocent_Frame_16
+    originalName: 
+    pivot: {x: 0.516129, y: 0.3444149}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 479
+      y: 1298
+      width: 155
+      height: 376
+    spriteID: ccd31f055bcd99340a322b99902baab9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 479, y: 1298}
+  - name: StickInnocent_Frame_17
+    originalName: 
+    pivot: {x: 0.6181818, y: 0.28970915}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 277
+      y: 1257
+      width: 165
+      height: 447
+    spriteID: 9d19fa6657ca64748a7e4856928b6954
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 277, y: 1257}
+  - name: StickInnocent_Frame_18
+    originalName: 
+    pivot: {x: 0.57731956, y: 0.33120203}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1319
+      width: 194
+      height: 391
+    spriteID: 566e872d9a3b6de44b85515e0676902b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1319}
+  - name: StickInnocent_Frame_19
+    originalName: 
+    pivot: {x: 0.516129, y: 0.3444149}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 911
+      y: 4
+      width: 155
+      height: 376
+    spriteID: 1871d739c183209498a85836e9382598
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 911, y: 4}
+  - name: StickInnocent_Frame_20
+    originalName: 
+    pivot: {x: 0.516129, y: 0.3444149}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 911
+      y: 388
+      width: 155
+      height: 376
+    spriteID: 2e917e0e9fcbcb04cae996c3882ad382
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 911, y: 388}
+  - name: StickInnocent_Frame_21
+    originalName: 
+    pivot: {x: 0.6181818, y: 0.28970915}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 479
+      y: 4
+      width: 165
+      height: 447
+    spriteID: 0340f9ea02eef85459bd54d034914de9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 479, y: 4}
+  - name: StickInnocent_Frame_22
+    originalName: 
+    pivot: {x: 0.57731956, y: 0.33120203}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 277
+      y: 4
+      width: 194
+      height: 391
+    spriteID: f0b5b563abc2b0c4381ab90602851fe8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 277, y: 4}
+  - name: StickInnocent_Frame_23
+    originalName: 
+    pivot: {x: 0.516129, y: 0.3444149}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 911
+      y: 772
+      width: 155
+      height: 376
+    spriteID: d76e0f49ab24a9e4da48c27b2658d28e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 911, y: 772}
+  - name: StickInnocent_Frame_24
+    originalName: 
+    pivot: {x: 0.6181818, y: 0.28970915}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 479
+      y: 459
+      width: 165
+      height: 447
+    spriteID: 66c91b69f54c58642861466034e62e7f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 479, y: 459}
+  - name: StickInnocent_Frame_25
+    originalName: 
+    pivot: {x: 0.57731956, y: 0.33120203}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 277
+      y: 403
+      width: 194
+      height: 391
+    spriteID: f003ad421b977184ba6150bc2eddc66b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 277, y: 403}
+  - name: StickInnocent_Frame_26
+    originalName: 
+    pivot: {x: 0.516129, y: 0.3444149}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 911
+      y: 1156
+      width: 155
+      height: 376
+    spriteID: 19390d38b05a896478b7597fa6514b3b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 911, y: 1156}
+  - name: StickInnocent_Frame_27
+    originalName: 
+    pivot: {x: 0.5362319, y: 0.37212643}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1074
+      y: 388
+      width: 138
+      height: 348
+    spriteID: 7d1eb13f6e9c31d4ba4ffe557bc5b3e4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1074, y: 388}
+  - name: StickInnocent_Frame_28
+    originalName: 
+    pivot: {x: 0.50340134, y: 0.3444149}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1074
+      y: 4
+      width: 147
+      height: 376
+    spriteID: eb87b9a5e39373b48b8f0ec58b84896f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1074, y: 4}
+  - name: StickInnocent_Frame_30
+    originalName: 
+    pivot: {x: 0.5538461, y: -1.1544118}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 911
+      y: 1924
+      width: 65
+      height: 68
+    spriteID: 8ca88365c8bd6ed4db472fe602370541
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 911, y: 1924}
+  - name: StickInnocent_Frame_31
+    originalName: 
+    pivot: {x: 0.54961824, y: -0.11780103}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 652
+      y: 1808
+      width: 131
+      height: 191
+    spriteID: 7c7b73e6ace10804caec9415dfec0be6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 652, y: 1808}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: 1588091340
+    name: StickInnocent
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: StickInnocent_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 39
+        y: 2
+        width: 264
+        height: 297
+      spriteId: a4559022ba41dfe439bdb837365ad7cd
+    - name: StickInnocent_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 41
+        y: 2
+        width: 259
+        height: 296
+      spriteId: 4799fc2b73cf9c241932463119cc9654
+    - name: StickInnocent_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 20
+        y: 2
+        width: 251
+        height: 295
+      spriteId: d83fc646e9cf79d4cbe11052c4bc95f6
+    - name: StickInnocent_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 11
+        y: 2
+        width: 245
+        height: 288
+      spriteId: 3a598a1c9838add49bcb463eaa5bf125
+    - name: StickInnocent_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 8
+        y: 2
+        width: 251
+        height: 292
+      spriteId: 8ead811f37449624686baed94ace1eea
+    - name: StickInnocent_Frame_5
+      frameIndex: 5
+      cellRect:
+        x: 14
+        y: 2
+        width: 242
+        height: 291
+      spriteId: e9881e01ed2ee844bb0ce403840c8308
+    - name: StickInnocent_Frame_6
+      frameIndex: 6
+      cellRect:
+        x: 19
+        y: 2
+        width: 231
+        height: 292
+      spriteId: 3de9f3cb651a0a24bb14d34b1ff5b919
+    - name: StickInnocent_Frame_7
+      frameIndex: 7
+      cellRect:
+        x: 28
+        y: 2
+        width: 234
+        height: 296
+      spriteId: 0df435e1252659440bee01b170a93e43
+    - name: StickInnocent_Frame_8
+      frameIndex: 8
+      cellRect:
+        x: 17
+        y: 2
+        width: 230
+        height: 297
+      spriteId: 235bff60d5992e640803260b150b84bb
+    - name: StickInnocent_Frame_9
+      frameIndex: 9
+      cellRect:
+        x: 30
+        y: 2
+        width: 265
+        height: 299
+      spriteId: 23e6470ba1f0b7f4698de45a1b93bff6
+    - name: StickInnocent_Frame_11
+      frameIndex: 11
+      cellRect:
+        x: 82
+        y: 2
+        width: 147
+        height: 376
+      spriteId: 8c72228c6bba26e4c8e9da83b4707fce
+    - name: StickInnocent_Frame_12
+      frameIndex: 12
+      cellRect:
+        x: 82
+        y: 2
+        width: 138
+        height: 348
+      spriteId: 95d71c6677b7a4946a7bfec95875836e
+    - name: StickInnocent_Frame_13
+      frameIndex: 13
+      cellRect:
+        x: 76
+        y: 2
+        width: 155
+        height: 376
+      spriteId: b81c24089e6995b4990d5020e187b4c5
+    - name: StickInnocent_Frame_14
+      frameIndex: 14
+      cellRect:
+        x: 54
+        y: 2
+        width: 165
+        height: 447
+      spriteId: ea0215adc256ebe4d8425a32404dc41e
+    - name: StickInnocent_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 44
+        y: 2
+        width: 194
+        height: 391
+      spriteId: d95bcf96f1389374fa6eff5225074da0
+    - name: StickInnocent_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 76
+        y: 2
+        width: 155
+        height: 376
+      spriteId: ccd31f055bcd99340a322b99902baab9
+    - name: StickInnocent_Frame_17
+      frameIndex: 17
+      cellRect:
+        x: 54
+        y: 2
+        width: 165
+        height: 447
+      spriteId: 9d19fa6657ca64748a7e4856928b6954
+    - name: StickInnocent_Frame_18
+      frameIndex: 18
+      cellRect:
+        x: 44
+        y: 2
+        width: 194
+        height: 391
+      spriteId: 566e872d9a3b6de44b85515e0676902b
+    - name: StickInnocent_Frame_19
+      frameIndex: 19
+      cellRect:
+        x: 76
+        y: 2
+        width: 155
+        height: 376
+      spriteId: 1871d739c183209498a85836e9382598
+    - name: StickInnocent_Frame_20
+      frameIndex: 20
+      cellRect:
+        x: 76
+        y: 2
+        width: 155
+        height: 376
+      spriteId: 2e917e0e9fcbcb04cae996c3882ad382
+    - name: StickInnocent_Frame_21
+      frameIndex: 21
+      cellRect:
+        x: 54
+        y: 2
+        width: 165
+        height: 447
+      spriteId: 0340f9ea02eef85459bd54d034914de9
+    - name: StickInnocent_Frame_22
+      frameIndex: 22
+      cellRect:
+        x: 44
+        y: 2
+        width: 194
+        height: 391
+      spriteId: f0b5b563abc2b0c4381ab90602851fe8
+    - name: StickInnocent_Frame_23
+      frameIndex: 23
+      cellRect:
+        x: 76
+        y: 2
+        width: 155
+        height: 376
+      spriteId: d76e0f49ab24a9e4da48c27b2658d28e
+    - name: StickInnocent_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 54
+        y: 2
+        width: 165
+        height: 447
+      spriteId: 66c91b69f54c58642861466034e62e7f
+    - name: StickInnocent_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 44
+        y: 2
+        width: 194
+        height: 391
+      spriteId: f003ad421b977184ba6150bc2eddc66b
+    - name: StickInnocent_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 76
+        y: 2
+        width: 155
+        height: 376
+      spriteId: 19390d38b05a896478b7597fa6514b3b
+    - name: StickInnocent_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 82
+        y: 2
+        width: 138
+        height: 348
+      spriteId: 7d1eb13f6e9c31d4ba4ffe557bc5b3e4
+    - name: StickInnocent_Frame_28
+      frameIndex: 28
+      cellRect:
+        x: 82
+        y: 2
+        width: 147
+        height: 376
+      spriteId: eb87b9a5e39373b48b8f0ec58b84896f
+    - name: StickInnocent_Frame_30
+      frameIndex: 30
+      cellRect:
+        x: 120
+        y: 210
+        width: 65
+        height: 68
+      spriteId: 8ca88365c8bd6ed4db472fe602370541
+    - name: StickInnocent_Frame_31
+      frameIndex: 31
+      cellRect:
+        x: 84
+        y: 154
+        width: 131
+        height: 191
+      spriteId: 7c7b73e6ace10804caec9415dfec0be6
+    linkedCells: []
+    parentIndex: -1
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: WebGL
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 312, y: 526}

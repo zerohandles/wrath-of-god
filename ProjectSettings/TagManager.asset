@@ -12,6 +12,7 @@ TagManager:
   - Tornado
   - Flood
   - Explosion
+  - Innocent
   layers:
   - Default
   - TransparentFX

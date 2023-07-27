@@ -24,6 +24,11 @@ public class Player : MonoBehaviour
             ShootLightning();
             timer = 0f;
         }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            Debug.Log("Right click");
+        }
     }
 
     // Launch a lightning bolt towards the mouse's position
