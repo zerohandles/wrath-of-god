@@ -603,7 +603,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meteorSpawnDelay: 1
   meteorStormTimer: 5
-  meteor: {fileID: 0}
+  meteor: {fileID: 4258763135012613387, guid: cf976c7c1e7904642a7ff00ddb2a727a, type: 3}
 --- !u!4 &581073020
 Transform:
   m_ObjectHideFlags: 0
