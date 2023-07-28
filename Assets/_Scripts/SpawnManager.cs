@@ -47,8 +47,8 @@ public class SpawnManager : MonoBehaviour
                 GameObject obj = (GameObject)Instantiate(enemy.enemyPrefab, spawnPos2, Quaternion.Euler(0, 180, 0));
                 obj.transform.SetParent(enemyContainer.transform);
             }
+            enemy.totalSpawned += 1;
         }
-        enemy.totalSpawned += 1;
 
         StartCoroutine(SpawnEnemy(enemy));
     }

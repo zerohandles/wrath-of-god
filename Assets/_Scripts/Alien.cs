@@ -7,8 +7,8 @@ public class Alien : MonoBehaviour
     private GameObject target;
     private Vector3 targetPos;
     private Vector3 startingPos;
-    private float offset = -0.32f;
-    private float speed = 2f;
+    private readonly float offset = -0.32f;
+    private readonly float speed = 2f;
     private bool hasTarget = false;
     private bool abductedTarget = false;
 

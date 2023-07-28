@@ -72,17 +72,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void ChangeScore(Enemy enemy)
+    public void ChangeScore(float value)
     {
-        score += enemy.value * (1 + combo);
+        score += value * (1 + combo);
     }
 
     public void EnemyDeath(Enemy enemy)
     {
         combo += .01f;
-        ChangeScore(enemy);
         comboTimer = 0;
         OverlayUI.instance.UpdateScore();
         OverlayUI.instance.UpdateComboText();
+    }
+
+    public void ScoreInnocent(GameObject target)
+    {
+        foreach (Enemy enemy in spawnManager.enemies)
+        {
+            if (target.CompareTag(enemy.tag))
+            {
+                ChangeScore(-enemy.value);
+                EnemyDeath(enemy);
+            }
+        }
     }
 }
