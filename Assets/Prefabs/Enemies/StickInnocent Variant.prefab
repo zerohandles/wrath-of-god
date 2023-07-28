@@ -13,6 +13,10 @@ PrefabInstance:
       value: StickInnocent Variant
       objectReference: {fileID: 0}
     - target: {fileID: -2253911629886400664, guid: 2da4bd22d342b4d4b820a7354b3c362b, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -2253911629886400664, guid: 2da4bd22d342b4d4b820a7354b3c362b, type: 3}
       propertyPath: m_TagString
       value: Innocent
       objectReference: {fileID: 0}
@@ -99,6 +103,9 @@ PrefabInstance:
       addedObject: {fileID: 8157351060584565242}
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 2da4bd22d342b4d4b820a7354b3c362b, type: 3}
       insertIndex: -1
+      addedObject: {fileID: -4236044164097053842}
+    - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 2da4bd22d342b4d4b820a7354b3c362b, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 7851844889816017461}
     - targetCorrespondingSourceObject: {fileID: -2253911629886400664, guid: 2da4bd22d342b4d4b820a7354b3c362b, type: 3}
       insertIndex: -1
@@ -155,6 +162,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deathEffect: {fileID: 2246043463863409642, guid: 10c6977415663b44e96ee9ae77a17206, type: 3}
+--- !u!114 &-4236044164097053842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2806725760256068618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d07e96de966fad6409a0c4468ca33754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!70 &7851844889816017461
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
