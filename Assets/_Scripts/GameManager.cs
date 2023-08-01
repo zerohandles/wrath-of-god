@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public SpawnManager spawnManager;
     private MenuUI menuUI;
     private UITimer timer;
+    private int innocentsKilled = 0;
 
     public float PointsToWin { get; private set; }
     [SerializeField] private float m_pointsToWin;
@@ -77,7 +78,7 @@ public class GameManager : MonoBehaviour
         score += value * (1 + combo);
     }
 
-    public void EnemyDeath(Enemy enemy)
+    public void UpdateUI()
     {
         combo += .01f;
         comboTimer = 0;
@@ -92,7 +93,8 @@ public class GameManager : MonoBehaviour
             if (target.CompareTag(enemy.tag))
             {
                 ChangeScore(-enemy.value);
-                EnemyDeath(enemy);
+                UpdateUI();
+                innocentsKilled += 1;
             }
         }
     }

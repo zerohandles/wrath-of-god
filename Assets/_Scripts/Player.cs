@@ -5,16 +5,25 @@ using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {
+    [Header("Player Settings")]
     [SerializeField] private GameObject lightningBolt;
     [SerializeField] private GameObject firePoint;
     [SerializeField] private float fireRate = 0.1f;
     private float timer;
 
+    [Header("Rescue Innocents")]
     [SerializeField] private float rescueRadius = .5f;
     [SerializeField] ContactFilter2D rescueLayerMask;
     [SerializeField] private LineRenderer rescueLight;
     private bool rescueInProgress = false;
     Collider2D[] result = new Collider2D[1];
+
+    [Header("Tornado Settings")]
+    public GameObject tornado;
+    public Texture2D tornadoCursor;
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 cursorOffset = Vector2.zero;
+    private bool tornadoReady;
 
 
     private void Update()
@@ -24,6 +33,12 @@ public class Player : MonoBehaviour
         {
             if (EventSystem.current.IsPointerOverGameObject())
             {
+                return;
+            }
+
+            if (tornadoReady)
+            {
+                Tornado();
                 return;
             }
 
@@ -50,6 +65,22 @@ public class Player : MonoBehaviour
         float angle = Vector2.SignedAngle(Vector2.down, dir);
 
         Instantiate(lightningBolt, firePoint.transform.position, Quaternion.Euler(0, 0, angle));   
+    }
+
+    public void Tornado()
+    {
+        if (!tornadoReady)
+        {
+            Debug.Log("Tornado Started");
+            Cursor.SetCursor(tornadoCursor, cursorOffset, cursorMode);
+            tornadoReady = true;
+            return;
+        }
+
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Instantiate(tornado, new Vector3(mousePosition.x, -2.25f, 0), Quaternion.identity);
+        Cursor.SetCursor(null, Vector2.zero, cursorMode);
+        tornadoReady = false;
     }
 
     void DetectInnocent()

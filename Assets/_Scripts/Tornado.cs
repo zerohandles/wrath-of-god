@@ -39,7 +39,7 @@ public class Tornado : MonoBehaviour
             if (collision.gameObject.CompareTag(enemy.tag))
             {
                 GameManager.instance.ChangeScore(enemy.value);
-                GameManager.instance.EnemyDeath(enemy);
+                GameManager.instance.UpdateUI();
             }
         }
         Destroy(collision.gameObject);
