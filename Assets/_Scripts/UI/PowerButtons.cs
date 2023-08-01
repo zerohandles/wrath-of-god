@@ -22,7 +22,11 @@ public class PowerButtons : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>(); 
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        StartCoroutine(DisablePower(tornadoButton, tornadoTimer));
+        StartCoroutine(DisablePower(floodButton, floodTimer));
+        StartCoroutine(DisablePower(ufoButton, ufoTimer));
+        StartCoroutine(DisablePower(meteorStormButton, meteorStormTimer));
     }
 
     public void ActivateTornado()

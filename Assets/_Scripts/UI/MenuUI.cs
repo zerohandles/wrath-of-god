@@ -24,7 +24,7 @@ public class MenuUI : MonoBehaviour
         {
             nextButtonText.text = "Continue";
             menuTitleText.text = "Victory!";
-            menuDescriptionText.text = "You have smote the non-believers, \nreducing them to smoldering craters.\n The world fears you again.";
+            menuDescriptionText.text = $"You have smote {GameManager.instance.totalKilled} non-believers, \nreducing them to smoldering craters.\n The world fears you again.";
         }
 
         menuUI.SetActive(true);
@@ -44,7 +44,7 @@ public class MenuUI : MonoBehaviour
         }
         else
         {
-            Debug.Log("Load next level");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

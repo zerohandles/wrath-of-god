@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private MenuUI menuUI;
     private UITimer timer;
     private int innocentsKilled = 0;
+    public int totalKilled = 0;
 
     public float PointsToWin { get; private set; }
     [SerializeField] private float m_pointsToWin;
@@ -76,6 +77,7 @@ public class GameManager : MonoBehaviour
     public void ChangeScore(float value)
     {
         score += value * (1 + combo);
+        totalKilled += 1;
     }
 
     public void UpdateUI()
