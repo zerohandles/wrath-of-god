@@ -5,10 +5,10 @@ using UnityEngine;
 public class BackgroundMeteor : MonoBehaviour
 {
     private Vector3 target;
-    private float targetXRange = 8.3f;
-    private float targetY = -2;
+    private readonly float targetXRange = 8.3f;
+    private readonly float targetY = -2;
+    private readonly float lifeTime = 2;
     private float timer = 0;
-    private float lifeTime = 2;
 
     [SerializeField] private float speed;
 
@@ -19,11 +19,6 @@ public class BackgroundMeteor : MonoBehaviour
         Vector3 dir = (target - transform.position).normalized;
         float angle = Vector2.SignedAngle(Vector3.right, dir);
         transform.rotation = Quaternion.Euler(0, 0, angle);
-    }
-
-    void Start()
-    {
-
     }
 
     private void Update()

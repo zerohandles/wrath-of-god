@@ -20,16 +20,17 @@ public class EnemyMovement : MonoBehaviour
 
     private readonly float floodWall = -8;
 
-    private void Awake()
+    private void OnEnable()
     {
         SetRandomSpeed();
         SetMoveTimer();
+        animator.SetFloat("speed", 1);
+        isStopped = false;
     }
 
-    private void Start()
+    private void Awake()
     {
         animator = GetComponent<Animator>();
-        animator.SetFloat("speed", 1);
         rb = GetComponent<Rigidbody2D>();
     }
 

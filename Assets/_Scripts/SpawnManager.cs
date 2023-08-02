@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class SpawnManager : MonoBehaviour
 {
@@ -20,11 +21,27 @@ public class SpawnManager : MonoBehaviour
         spawnPos2 = new Vector2(xBoundary, groundOffset);
         foreach (Enemy enemy in enemies)
         {
-            StartCoroutine(SpawnEnemy(enemy));
+            ObjectPool<GameObject> pool = new ObjectPool<GameObject>(() =>
+            {
+                GameObject obj = Instantiate(enemy.enemyPrefab);
+                obj.transform.SetParent(enemyContainer.transform);
+                return obj;
+            }, enemyPrefab =>
+            {
+                enemyPrefab.gameObject.SetActive(true);
+            }, enemyPrefab =>
+            {
+                enemyPrefab.gameObject.SetActive(false);
+            }, enemyPrefab =>
+            {
+                Destroy(enemyPrefab.gameObject);
+            }, true, (int)enemy.spawnLimit, (int)enemy.spawnLimit + 10); 
+
+            StartCoroutine(SpawnEnemy(enemy, pool));
         }
     }
 
-    IEnumerator SpawnEnemy(Enemy enemy)
+    IEnumerator SpawnEnemy(Enemy enemy, ObjectPool<GameObject> pool)
     {
         if (enemy.totalSpawned >= enemy.maxSpawnable)
         {
@@ -36,20 +53,26 @@ public class SpawnManager : MonoBehaviour
         if (enemy.spawnLimit > GameObject.FindGameObjectsWithTag(enemy.tag).Length && !GameManager.instance.isGameOver)
         {
             int spawnLocation = Random.Range(0, 2);
+            GameObject obj = pool.Get();
+            EnemyDeathEffect death = obj.gameObject.GetComponent<EnemyDeathEffect>();
+            death.pool = pool;
 
             if (spawnLocation == 0)
             {
-                GameObject obj = (GameObject)Instantiate(enemy.enemyPrefab, spawnPos1, Quaternion.Euler(0, 0, 0));
-                obj.transform.SetParent(enemyContainer.transform);
+                obj.transform.SetPositionAndRotation(spawnPos1, Quaternion.Euler(0, 0, 0));
             }
             else
             {
-                GameObject obj = (GameObject)Instantiate(enemy.enemyPrefab, spawnPos2, Quaternion.Euler(0, 180, 0));
-                obj.transform.SetParent(enemyContainer.transform);
+                obj.transform.SetPositionAndRotation(spawnPos2, Quaternion.Euler(0, 180, 0));
             }
             enemy.totalSpawned += 1;
         }
 
-        StartCoroutine(SpawnEnemy(enemy));
+        StartCoroutine(SpawnEnemy(enemy, pool));
+    }
+
+    public void KillEnemy(ObjectPool<GameObject> pool, EnemyDeathEffect enemy)
+    {
+        pool.Release(enemy.gameObject);
     }
 }

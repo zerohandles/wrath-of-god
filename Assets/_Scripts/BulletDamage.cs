@@ -39,10 +39,8 @@ public class BulletDamage : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Debug.Log("Explode");
             GameObject effect  = (GameObject)Instantiate(explosionEffect, explosionPoint.transform.position, Quaternion.identity);
             effect.transform.SetParent(effectsContainer.transform);
-            // I'll probably want to pool these effects too
             Destroy(effect, 1f);
 
             if (!hitEnemy)
@@ -50,7 +48,6 @@ public class BulletDamage : MonoBehaviour
                 GameManager.instance.combo = 0;
                 OverlayUI.instance.UpdateComboText();
             }
-            // Use object pooling for lightning bolts
             Destroy(gameObject);
         }
     }

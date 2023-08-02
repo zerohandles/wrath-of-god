@@ -3548,6 +3548,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3910190091379806687, guid: 1ee5503bb0d4b054190f3d7ea72ceac7, type: 3}
+      propertyPath: m_ColliderMask.m_Bits
+      value: 1536
+      objectReference: {fileID: 0}
     - target: {fileID: 4787945234226311533, guid: 1ee5503bb0d4b054190f3d7ea72ceac7, type: 3}
       propertyPath: m_Name
       value: Flood

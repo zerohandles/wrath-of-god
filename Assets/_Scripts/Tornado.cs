@@ -42,6 +42,5 @@ public class Tornado : MonoBehaviour
                 GameManager.instance.UpdateUI();
             }
         }
-        Destroy(collision.gameObject);
     }
 }
