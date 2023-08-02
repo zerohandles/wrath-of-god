@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2819251808926378420}
   - component: {fileID: 1165029330372469008}
   - component: {fileID: 8031245754282701473}
-  - component: {fileID: 3910190091379806687}
   - component: {fileID: 3174674726523507622}
   m_Layer: 0
   m_Name: Flood
@@ -139,7 +138,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 1
-  m_UsedByEffector: 1
+  m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -1.925758}
   m_SpriteTilingProperty:
@@ -154,26 +153,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 19.2, y: 6.9484854}
   m_EdgeRadius: 0
---- !u!249 &3910190091379806687
-AreaEffector2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4787945234226311533}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 512
-  m_UseGlobalAngle: 1
-  m_ForceAngle: -180
-  m_ForceMagnitude: 5
-  m_ForceVariation: 0
-  m_ForceTarget: 0
-  m_Drag: 0
-  m_AngularDrag: 0
 --- !u!114 &3174674726523507622
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,7 +18,9 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float moveTimerMax = 8f;
     [SerializeField] private float moveTimerMin = 4f;
 
+    [SerializeField] private float floodSpeed = 5;
     private readonly float floodWall = -8;
+    private bool isInFlood = false;
 
     private void OnEnable()
     {
@@ -36,6 +38,18 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+        if (isInFlood && !isStopped)
+        {
+            var step = floodSpeed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(floodWall, transform.position.y), step);
+            if (Vector3.Distance(transform.position, new Vector3(floodWall, transform.position.y)) < 0.001f)
+            {
+                isStopped = true;
+            }
+
+            return;
+        }
+
         if (isStopped)
         {
             return;
@@ -71,20 +85,25 @@ public class EnemyMovement : MonoBehaviour
         moveTimer = Random.Range(moveTimerMin, moveTimerMax);
     }
 
-    void EndTornadoEfect()
+    void EndTornadoEffect()
     {
         rb.velocity = Vector3.zero;
         transform.rotation = Quaternion.identity;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    void EndFloodEffect()
     {
-        if(collision.transform.CompareTag("Flood"))
+        rb.velocity = Vector3.zero;
+        isInFlood = false;
+        isStopped = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.CompareTag("Flood"))
         {
-            if (transform.position.x < floodWall)
-            {
-                transform.position = new Vector2(floodWall, transform.position.y);
-            }
+            isStopped = false;
+            isInFlood = true;
         }
     }
 
@@ -92,12 +111,12 @@ public class EnemyMovement : MonoBehaviour
     {
         if (collision.transform.CompareTag("Tornado"))
         {
-            EndTornadoEfect();
+            EndTornadoEffect();
         }
 
         if (collision.transform.CompareTag("Flood"))
         {
-            rb.velocity = Vector3.zero;
+            EndFloodEffect();
         }
     }
 }
