@@ -54,11 +54,12 @@ public class MenuUI : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == finalLevelName)
         {
-            //Fake victory screen
+            // Add a toggle here using player prefs to go to the secret lvl if unlocked
+            SceneManager.LoadScene("VictoryScene");
         }
         else if (SceneManager.GetActiveScene().name == secretLevelName)
         {
-            // True victory Screen
+            SceneManager.LoadScene("TrueVictoryScene");
         }
     }
 }
