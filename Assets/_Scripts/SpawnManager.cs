@@ -7,6 +7,7 @@ public class SpawnManager : MonoBehaviour
 {
     public Enemy[] enemies;
     public GameObject enemyContainer;
+    public GameObject effectsContainer;
 
     private readonly float xBoundary = 9.5f;
     private readonly float groundOffset = -2.3f;
@@ -35,13 +36,29 @@ public class SpawnManager : MonoBehaviour
             }, enemyPrefab =>
             {
                 Destroy(enemyPrefab.gameObject);
-            }, true, (int)enemy.spawnLimit, (int)enemy.spawnLimit + 10); 
+            }, true, (int)enemy.spawnLimit, (int)enemy.spawnLimit + 10);
 
-            StartCoroutine(SpawnEnemy(enemy, pool));
+            ObjectPool<GameObject> effectPool = new ObjectPool<GameObject>(() =>
+            {
+                GameObject obj = Instantiate(enemy.deathEffect);
+                obj.transform.SetParent(effectsContainer.transform);
+                return obj;
+            }, effectPrefab =>
+            {
+                effectPrefab.gameObject.SetActive(true);
+            }, effectPrefab =>
+            {
+                effectPrefab.gameObject.SetActive(false);
+            }, effectPrefab =>
+            {
+                Destroy(effectPrefab.gameObject);
+            }, true, (int)enemy.spawnLimit, (int)enemy.spawnLimit + 20);
+
+            StartCoroutine(SpawnEnemy(enemy, pool, effectPool));
         }
     }
 
-    IEnumerator SpawnEnemy(Enemy enemy, ObjectPool<GameObject> pool)
+    IEnumerator SpawnEnemy(Enemy enemy, ObjectPool<GameObject> prefabPool, ObjectPool<GameObject> effectPool)
     {
         if (enemy.totalSpawned >= enemy.maxSpawnable)
         {
@@ -53,9 +70,10 @@ public class SpawnManager : MonoBehaviour
         if (enemy.spawnLimit > GameObject.FindGameObjectsWithTag(enemy.tag).Length && !GameManager.instance.isGameOver)
         {
             int spawnLocation = Random.Range(0, 2);
-            GameObject obj = pool.Get();
+            GameObject obj = prefabPool.Get();
             EnemyDeathEffect death = obj.gameObject.GetComponent<EnemyDeathEffect>();
-            death.pool = pool;
+            death.prefabPool = prefabPool;
+            death.effectPool = effectPool;
 
             if (spawnLocation == 0)
             {
@@ -68,11 +86,19 @@ public class SpawnManager : MonoBehaviour
             enemy.totalSpawned += 1;
         }
 
-        StartCoroutine(SpawnEnemy(enemy, pool));
+        StartCoroutine(SpawnEnemy(enemy, prefabPool, effectPool));
     }
 
-    public void KillEnemy(ObjectPool<GameObject> pool, EnemyDeathEffect enemy)
+    public void SpawnEfect(ObjectPool<GameObject> pool, Vector3 location, float timer)
     {
-        pool.Release(enemy.gameObject);
+        var effect = pool.Get();
+        effect.transform.position = location;
+        StartCoroutine(EffectTimer(pool, effect, timer));
+    }
+
+    private IEnumerator EffectTimer(ObjectPool<GameObject> pool, GameObject effect, float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        pool.Release(effect);
     }
 }

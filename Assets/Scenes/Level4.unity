@@ -1691,7 +1691,7 @@ MonoBehaviour:
     spawnDelay: 0.2
     spawnLimit: 40
     tag: Enemy1
-    deathEffect: {fileID: 5796241256871321732, guid: 7c635994f806dfc48bff6a9fbba49ca0, type: 3}
+    deathEffect: {fileID: 1763583019978817091, guid: 775e00b2335620440b1d78c56d487ec1, type: 3}
     totalSpawned: 0
     maxSpawnable: Infinity
   - enemyPrefab: {fileID: 7902323185679621025, guid: 5573c1a3377a7f04db972d702e045333, type: 3}
@@ -1699,7 +1699,7 @@ MonoBehaviour:
     spawnDelay: 7
     spawnLimit: 5
     tag: Crowd
-    deathEffect: {fileID: 5796241256871321732, guid: 7c635994f806dfc48bff6a9fbba49ca0, type: 3}
+    deathEffect: {fileID: 8515167230294833995, guid: b4a176f081afcc1488d89a45543b74dc, type: 3}
     totalSpawned: 0
     maxSpawnable: Infinity
   - enemyPrefab: {fileID: 1324233095715132567, guid: caae674fc9582264b938469d06c79631, type: 3}
@@ -1707,7 +1707,7 @@ MonoBehaviour:
     spawnDelay: 1.5
     spawnLimit: 15
     tag: Cow
-    deathEffect: {fileID: 5796241256871321732, guid: 7c635994f806dfc48bff6a9fbba49ca0, type: 3}
+    deathEffect: {fileID: 1113295150143457764, guid: aeb0bcbb6e9f74c499fbde9608813c62, type: 3}
     totalSpawned: 0
     maxSpawnable: Infinity
   - enemyPrefab: {fileID: 2806725760256068618, guid: cc8f37793da659e4d8694da6d337e8e0, type: 3}
@@ -1719,6 +1719,7 @@ MonoBehaviour:
     totalSpawned: 0
     maxSpawnable: 4
   enemyContainer: {fileID: 1469980845}
+  effectsContainer: {fileID: 1731764932}
 --- !u!114 &1037698510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1732,6 +1733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1037698509}
+  totalKilled: 0
   m_pointsToWin: 150000
   score: 0
   combo: 0

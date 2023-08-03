@@ -6,28 +6,27 @@ using UnityEngine.Pool;
 public class EnemyDeathEffect : MonoBehaviour
 {
     public GameObject deathEffect;
-    private GameObject effectsContainer;
 
-    [HideInInspector] public ObjectPool<GameObject> pool;
+    [HideInInspector] public ObjectPool<GameObject> prefabPool;
+    [HideInInspector] public ObjectPool<GameObject> effectPool;
 
-    private void Start()
+    void DisableGameObject()
     {
-        effectsContainer = GameObject.Find("Effects");
+        prefabPool.Release(gameObject);
     }
 
-    public void Death()
+    void Death()
     {
-        GameManager.instance.spawnManager.KillEnemy(pool, this);
+        GameManager.instance.spawnManager.SpawnEfect(effectPool, gameObject.transform.position, 3);
+        DisableGameObject();
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         if (collision.gameObject.CompareTag("Lightning") || collision.gameObject.CompareTag("Explosion"))
         {
-            GameObject effect = (GameObject)Instantiate(deathEffect, gameObject.transform.position, Quaternion.identity);
-            effect.transform.SetParent(effectsContainer.transform);
-            Destroy(effect, 5f);
             Death();
         }
     }
@@ -36,9 +35,6 @@ public class EnemyDeathEffect : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Tornado"))
         {
-            GameObject effect = (GameObject)Instantiate(deathEffect, gameObject.transform.position, Quaternion.identity);
-            effect.transform.SetParent(effectsContainer.transform);
-            Destroy(effect, 5f);
             Death();
         }
     }
