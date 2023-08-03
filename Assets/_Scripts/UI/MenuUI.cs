@@ -11,6 +11,8 @@ public class MenuUI : MonoBehaviour
     public TextMeshProUGUI menuDescriptionText;
     public TextMeshProUGUI nextButtonText;
     public GameObject menuBackground;
+    private string finalLevelName = "Level5";
+    private string secretLevelName = "Level6";
 
     public void SetGameOverText(bool victory)
     {
@@ -45,6 +47,18 @@ public class MenuUI : MonoBehaviour
         else
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+    }
+
+    public void GoToVictoryScreen()
+    {
+        if (SceneManager.GetActiveScene().name == finalLevelName)
+        {
+            //Fake victory screen
+        }
+        else if (SceneManager.GetActiveScene().name == secretLevelName)
+        {
+            // True victory Screen
         }
     }
 }

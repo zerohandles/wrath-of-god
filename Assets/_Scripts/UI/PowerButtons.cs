@@ -49,6 +49,12 @@ public class PowerButtons : MonoBehaviour
 
     public void ActivateMeteorStorm()
     {
+        if (meteorStorm.activeInHierarchy)
+        {
+            meteorStorm.SetActive(false);
+            return;
+        }
+
         meteorStorm.SetActive(true);
         StartCoroutine(DisablePower(meteorStormButton, meteorStormTimer));
     }

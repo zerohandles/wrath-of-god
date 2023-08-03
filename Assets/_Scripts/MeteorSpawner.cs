@@ -18,6 +18,11 @@ public class MeteorSpawner : MonoBehaviour
         StartCoroutine(MeteorStormTimer());
     }
 
+    private void OnDisable()
+    {
+        CancelInvoke(nameof(SpawnMeteor));
+    }
+
     private void SpawnMeteor()
     {
         Vector3 spawnPos = new Vector3(Random.Range(-spawnPosXRange, spawnPosXRange), spawnPosY, 0);

@@ -1807,7 +1807,7 @@ MonoBehaviour:
   floodButton: {fileID: 1100423635}
   ufoTimer: 30
   ufoButton: {fileID: 377040136}
-  meteorStormTimer: 15
+  meteorStormTimer: 30
   meteorStormButton: {fileID: 686306230}
 --- !u!1 &1040649386
 GameObject:
@@ -3413,11 +3413,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4461955175259283540, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
       propertyPath: meteorSpawnDelay
-      value: 0.7
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4461955175259283540, guid: ebc929912e92d6244a1352aedb0267ba, type: 3}
       propertyPath: meteorStormTimer
-      value: 120
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
