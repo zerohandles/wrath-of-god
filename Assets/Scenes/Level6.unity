@@ -1710,7 +1710,7 @@ MonoBehaviour:
     deathEffect: {fileID: 1113295150143457764, guid: aeb0bcbb6e9f74c499fbde9608813c62, type: 3}
     totalSpawned: 0
     maxSpawnable: Infinity
-  - enemyPrefab: {fileID: 2806725760256068618, guid: cc8f37793da659e4d8694da6d337e8e0, type: 3}
+  - enemyPrefab: {fileID: 2806725760256068618, guid: ce9c35ba2c066854ebbb39e58fdbe0ba, type: 3}
     value: 5000
     spawnDelay: 5
     spawnLimit: 5
@@ -3573,6 +3573,10 @@ PrefabInstance:
     - target: {fileID: 5789303147557961063, guid: 18ded4a3187e05544891a6a0b0296ea9, type: 3}
       propertyPath: m_Name
       value: MotherShip
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789303147557961063, guid: 18ded4a3187e05544891a6a0b0296ea9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7049773343085555913, guid: 18ded4a3187e05544891a6a0b0296ea9, type: 3}
       propertyPath: m_RootOrder

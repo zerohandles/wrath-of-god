@@ -43,8 +43,6 @@ public class Meteor : MonoBehaviour
             transform.rotation = Quaternion.identity;
             animator.SetTrigger("Impact");
             isMoving = false;
-
-            // Use object pooling later
             Destroy(gameObject,1f);
         }
     }
