@@ -46,6 +46,12 @@ public class MenuUI : MonoBehaviour
         }
         else
         {
+            if(SceneManager.GetActiveScene().name == finalLevelName || SceneManager.GetActiveScene().name == secretLevelName)
+            {
+                GoToVictoryScreen();
+                return;
+            }
+
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
