@@ -13,6 +13,7 @@ public class MenuUI : MonoBehaviour
     public GameObject menuBackground;
     public AudioSource audioSource;
     public AudioClip scrollSound;
+    private int secretLevelIndex = 5;
     private string finalLevelName = "Level5";
     private string secretLevelName = "Level6";
 
@@ -49,7 +50,19 @@ public class MenuUI : MonoBehaviour
         }
         else
         {
-            if(SceneManager.GetActiveScene().name == finalLevelName || SceneManager.GetActiveScene().name == secretLevelName)
+            if(SceneManager.GetActiveScene().name == finalLevelName)
+            {
+                if (CheckSecretCondition())
+                {
+                    SceneManager.LoadScene(secretLevelName);
+                    return;
+                }
+
+                GoToVictoryScreen();
+                return;
+            }
+
+            if(SceneManager.GetActiveScene().name == secretLevelName)
             {
                 GoToVictoryScreen();
                 return;
@@ -70,5 +83,18 @@ public class MenuUI : MonoBehaviour
         {
             SceneManager.LoadScene("TrueVictoryScene");
         }
+    }
+
+    private bool CheckSecretCondition()
+    {
+        for (int i = 0; i < secretLevelIndex; i++)
+        {
+            if(PlayerPrefs.GetInt("level"+i) == 0)
+            {
+                return false;
+            }
+        }
+        PlayerPrefs.SetInt("secretLevel", 1);
+        return true;
     }
 }

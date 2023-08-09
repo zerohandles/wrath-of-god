@@ -7,6 +7,7 @@ public class MainMenuUI : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject tutorialMenu;
+    public GameObject levelSelectMenu;
     private Animator animator;
     public AudioClip scrollSound;
     public AudioSource audioSource;
@@ -49,7 +50,9 @@ public class MainMenuUI : MonoBehaviour
         animator.SetTrigger("Close");
         audioSource.PlayOneShot(scrollSound);
         yield return new WaitForSeconds(1);
-        Debug.Log("Load Level Selection scene");
+        levelSelectMenu.SetActive(true);
+        audioSource.PlayOneShot(scrollSound);
+        mainMenu.SetActive(false);
     }
 
     private IEnumerator Tutorial()

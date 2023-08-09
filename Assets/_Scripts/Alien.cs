@@ -16,7 +16,6 @@ public class Alien : MonoBehaviour
     public GameObject alienMotherShip;
 
     private FadeEffectAudio fader;
-    public AudioClip alienHoverSound;
 
     private void OnEnable()
     {

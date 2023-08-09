@@ -10,7 +10,9 @@ public class GameManager : MonoBehaviour
     public SpawnManager spawnManager;
     private MenuUI menuUI;
     private UITimer timer;
+    public AudioSource sFXSource;
     private int innocentsKilled = 0;
+    [SerializeField] int innocentsSpawned;
     public int totalKilled = 0;
 
     public float PointsToWin { get; private set; }
@@ -20,6 +22,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float comboTimeLimit = 1.5f;
     public float comboTimer = 0;
 
+    [SerializeField] private int nextLevel;
+    [SerializeField] private int levelIndex;
     public bool isGameOver;
 
     void Awake()
@@ -62,15 +66,27 @@ public class GameManager : MonoBehaviour
 
     void GameOver()
     {
-        isGameOver = true;
+        if (!isGameOver)
+        {
+            isGameOver = true;
+            sFXSource.Stop();
 
-        if(score < PointsToWin)
-        {
-            menuUI.SetGameOverText(false);
-        }
-        else if (score >= PointsToWin)
-        {
-            menuUI.SetGameOverText(true);
+            if(score < PointsToWin)
+            {
+                menuUI.SetGameOverText(false);
+            }
+            else if (score >= PointsToWin)
+            {
+                menuUI.SetGameOverText(true);
+                if (PlayerPrefs.GetInt("levelReached") < nextLevel)
+                {
+                    PlayerPrefs.SetInt("levelReached", nextLevel);
+                }
+                if (innocentsKilled == innocentsSpawned)
+                {
+                    PlayerPrefs.SetInt("level" + levelIndex, 1);
+                }
+            }
         }
     }
 

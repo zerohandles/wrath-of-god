@@ -1848,12 +1848,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1037698509}
+  sFXSource: {fileID: 1594017869}
+  innocentsSpawned: 0
   totalKilled: 0
   m_pointsToWin: 50000
   score: 0
   combo: 0
   comboTimeLimit: 1.5
   comboTimer: 0
+  nextLevel: 2
+  levelIndex: 0
   isGameOver: 0
 --- !u!114 &1037698511
 MonoBehaviour:
@@ -2863,7 +2867,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.75
   m_Pitch: 1
   Loop: 0
   Mute: 0

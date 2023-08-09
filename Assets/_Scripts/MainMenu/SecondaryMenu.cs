@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialMenu : MonoBehaviour
+public class SecondaryMenu : MonoBehaviour
 {
     private Animator animator;
     public GameObject mainMenu;
-    public GameObject tutorialMenu;
+    public GameObject secondaryMenu;
     public AudioSource audioSource;
     public AudioClip scrollSound;
 
@@ -23,10 +23,15 @@ public class TutorialMenu : MonoBehaviour
     private IEnumerator Back()
     {
         animator.SetTrigger("Close");
-        audioSource.PlayOneShot(scrollSound);
+        PlaySFX();
         yield return new WaitForSeconds(1);
         mainMenu.SetActive(true);
+        PlaySFX();
+        secondaryMenu.SetActive(false);
+    }
+
+    public void PlaySFX()
+    {
         audioSource.PlayOneShot(scrollSound);
-        tutorialMenu.SetActive(false);
     }
 }
