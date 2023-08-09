@@ -11,6 +11,8 @@ public class MenuUI : MonoBehaviour
     public TextMeshProUGUI menuDescriptionText;
     public TextMeshProUGUI nextButtonText;
     public GameObject menuBackground;
+    public AudioSource audioSource;
+    public AudioClip scrollSound;
     private string finalLevelName = "Level5";
     private string secretLevelName = "Level6";
 
@@ -30,6 +32,7 @@ public class MenuUI : MonoBehaviour
         }
 
         menuUI.SetActive(true);
+        audioSource.PlayOneShot(scrollSound);
         menuBackground.SetActive(true);
     }
 

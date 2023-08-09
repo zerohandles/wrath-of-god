@@ -15,15 +15,19 @@ public class Alien : MonoBehaviour
     private Animator animator;
     public GameObject alienMotherShip;
 
+    private FadeEffectAudio fader;
+    public AudioClip alienHoverSound;
+
     private void OnEnable()
     {
         StartCoroutine(FindTarget());
     }
 
-    void Start()
+    void Awake()
     {
         startingPos = transform.position;
         animator = GetComponent<Animator>();
+        fader = GetComponent<FadeEffectAudio>();
     }
 
     void Update()
@@ -66,6 +70,7 @@ public class Alien : MonoBehaviour
                 col.enabled = false;
             }
             hasTarget = true;
+            StartCoroutine(fader.FadeAudio(.35f, 2));
         }
         else
         {
@@ -81,6 +86,7 @@ public class Alien : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         targetPos = startingPos;
         abductedTarget = true;
+        StartCoroutine(fader.FadeAudio(0, 5));
         Destroy(target);
     }
 }

@@ -34,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 1461451784111655085}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8198123650416558711
 SpriteRenderer:
@@ -202,6 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionPoint: {fileID: 5984062123663724016}
   explosionEffect: {fileID: 1421110193048485766, guid: 7bab986ba4b11d44cb7a93c33f40ae63, type: 3}
+  impactSound: {fileID: 8300000, guid: 5b85c535fd2fbed4ca94d218f6a66ddf, type: 3}
 --- !u!1 &5984062123663724016
 GameObject:
   m_ObjectHideFlags: 0

@@ -1883,6 +1883,8 @@ MonoBehaviour:
   menuDescriptionText: {fileID: 291686115}
   nextButtonText: {fileID: 1595206510}
   menuBackground: {fileID: 1231908538}
+  audioSource: {fileID: 1790294523}
+  scrollSound: {fileID: 8300000, guid: 62aa81c8152ff7a4db5f01ec4eb0adeb, type: 3}
 --- !u!114 &1037698514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3708,6 +3710,18 @@ PrefabInstance:
     - target: {fileID: 2453474910552817477, guid: 1ee5503bb0d4b054190f3d7ea72ceac7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819251808926378420, guid: 1ee5503bb0d4b054190f3d7ea72ceac7, type: 3}
+      propertyPath: m_Color.b
+      value: 0.8396226
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819251808926378420, guid: 1ee5503bb0d4b054190f3d7ea72ceac7, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8396226
+      objectReference: {fileID: 0}
+    - target: {fileID: 2819251808926378420, guid: 1ee5503bb0d4b054190f3d7ea72ceac7, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8396226
       objectReference: {fileID: 0}
     - target: {fileID: 4787945234226311533, guid: 1ee5503bb0d4b054190f3d7ea72ceac7, type: 3}
       propertyPath: m_Name

@@ -2011,6 +2011,8 @@ MonoBehaviour:
   menuDescriptionText: {fileID: 291686115}
   nextButtonText: {fileID: 1595206510}
   menuBackground: {fileID: 1231908538}
+  audioSource: {fileID: 14762120}
+  scrollSound: {fileID: 8300000, guid: 62aa81c8152ff7a4db5f01ec4eb0adeb, type: 3}
 --- !u!114 &1037698514
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,6 +12,9 @@ public class Meteor : MonoBehaviour
     [SerializeField] private float speed;
     private bool isMoving = true;
 
+    public AudioSource audioSource;
+    public AudioClip impactSound;
+
 
     private void OnEnable()
     {
@@ -41,6 +44,7 @@ public class Meteor : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             transform.rotation = Quaternion.identity;
+            audioSource.PlayOneShot(impactSound);
             animator.SetTrigger("Impact");
             isMoving = false;
             Destroy(gameObject,1f);

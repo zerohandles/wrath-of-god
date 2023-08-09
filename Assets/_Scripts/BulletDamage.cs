@@ -11,10 +11,14 @@ public class BulletDamage : MonoBehaviour
 
     private GameObject effectsContainer;
 
+    private AudioSource audioSource;
+    public AudioClip impactSound;
+
 
     private void Start()
     {
         effectsContainer = GameObject.Find("Effects");
+        audioSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -39,6 +43,7 @@ public class BulletDamage : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            audioSource.PlayOneShot(impactSound);
             GameObject effect  = (GameObject)Instantiate(explosionEffect, explosionPoint.transform.position, Quaternion.identity);
             effect.transform.SetParent(effectsContainer.transform);
             Destroy(effect, 1f);

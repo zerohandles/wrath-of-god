@@ -6,7 +6,14 @@ public class Tornado : MonoBehaviour
 {
     [SerializeField] float lifetime = 7f;
     private float timer;
+    private FadeEffectAudio fader;
+    private float fadeDuration = 1;
 
+
+    private void Start()
+    {
+        fader = GetComponent<FadeEffectAudio>();
+    }
 
     private void Update()
     {
@@ -14,8 +21,9 @@ public class Tornado : MonoBehaviour
 
         if(timer > lifetime)
         {
+            StartCoroutine(fader.FadeAudio(0, fadeDuration));
             DisableAllColliders();
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, fadeDuration);
         }
     }
 

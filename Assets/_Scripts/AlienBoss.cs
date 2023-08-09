@@ -7,6 +7,8 @@ public class AlienBoss : MonoBehaviour
     private Animator animator;
     public GameObject laser;
     private Animator laserAnimator;
+    public AudioSource audioSource;
+    public AudioClip explosionSound;
 
     private bool isInPosition = false;
     private Vector3 firingPos = new Vector3(0, 4.8f, 0);
@@ -19,6 +21,7 @@ public class AlienBoss : MonoBehaviour
     private void OnEnable()
     {
         targetPos = firingPos;
+        audioSource.Stop();
     }
 
     private void Start()
@@ -62,9 +65,15 @@ public class AlienBoss : MonoBehaviour
     IEnumerator FireLaser()
     {
         animator.SetTrigger("Fire");
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(.5f);
+        audioSource.Play();
+        yield return new WaitForSeconds(1.0f);
+        audioSource.PlayOneShot(explosionSound);
+        yield return new WaitForSeconds(1.0f);
         laserAnimator.SetTrigger("End");
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(.3f);
+        audioSource.Stop();
+        yield return new WaitForSeconds(1.7f);
         targetPos = startingPos;
         isInPosition = false;
     }

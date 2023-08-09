@@ -8,6 +8,8 @@ public class MainMenuUI : MonoBehaviour
     public GameObject mainMenu;
     public GameObject tutorialMenu;
     private Animator animator;
+    public AudioClip scrollSound;
+    public AudioSource audioSource;
 
     void Start()
     {
@@ -37,6 +39,7 @@ public class MainMenuUI : MonoBehaviour
     private IEnumerator StartGame()
     {
         animator.SetTrigger("Close");
+        audioSource.PlayOneShot(scrollSound);
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene(1);
     }
@@ -44,6 +47,7 @@ public class MainMenuUI : MonoBehaviour
     private IEnumerator LevelSelect()
     {
         animator.SetTrigger("Close");
+        audioSource.PlayOneShot(scrollSound);
         yield return new WaitForSeconds(1);
         Debug.Log("Load Level Selection scene");
     }
@@ -51,14 +55,17 @@ public class MainMenuUI : MonoBehaviour
     private IEnumerator Tutorial()
     {
         animator.SetTrigger("Close");
+        audioSource.PlayOneShot(scrollSound);
         yield return new WaitForSeconds(1);
         tutorialMenu.SetActive(true);
+        audioSource.PlayOneShot(scrollSound);
         mainMenu.SetActive(false);
     }
 
     private IEnumerator QuitGame()
     {
         animator.SetTrigger("Close");
+        audioSource.PlayOneShot(scrollSound);
         yield return new WaitForSeconds(1);
         Application.Quit();
         Debug.Log("Quit");
