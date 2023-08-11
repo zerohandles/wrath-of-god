@@ -853,7 +853,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1959,7 +1959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1037698509}
   sFXSource: {fileID: 865186195}
-  innocentsSpawned: 0
+  innocentsSpawned: 5
   totalKilled: 0
   m_pointsToWin: 200000
   score: 0

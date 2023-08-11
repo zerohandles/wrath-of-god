@@ -2023,7 +2023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1037698509}
   sFXSource: {fileID: 188138053}
-  innocentsSpawned: 0
+  innocentsSpawned: 3
   totalKilled: 0
   m_pointsToWin: 100000
   score: 0

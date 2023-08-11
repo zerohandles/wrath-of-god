@@ -1831,7 +1831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1037698509}
   sFXSource: {fileID: 1790294523}
-  innocentsSpawned: 0
+  innocentsSpawned: 2
   totalKilled: 0
   m_pointsToWin: 80000
   score: 0
