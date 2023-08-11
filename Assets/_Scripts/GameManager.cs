@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     private MenuUI menuUI;
     private UITimer timer;
     public AudioSource sFXSource;
-    private int innocentsKilled = 0;
+    public int innocentsKilled = 0;
     [SerializeField] int innocentsSpawned;
     public int totalKilled = 0;
 
@@ -112,7 +112,6 @@ public class GameManager : MonoBehaviour
             {
                 ChangeScore(-enemy.value);
                 UpdateUI();
-                innocentsKilled += 1;
             }
         }
     }

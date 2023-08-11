@@ -17,6 +17,11 @@ public class EnemyDeathEffect : MonoBehaviour
 
     void Death()
     {
+        if (gameObject.CompareTag("Innocent"))
+        {
+            GameManager.instance.innocentsKilled += 1;
+        }
+
         GameManager.instance.spawnManager.SpawnEfect(effectPool, gameObject.transform.position, 3);
         DisableGameObject();
     }
