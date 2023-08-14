@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class SecondaryMenu : MonoBehaviour
@@ -20,6 +19,7 @@ public class SecondaryMenu : MonoBehaviour
         StartCoroutine(Back());
     }
 
+    // Play the scroll closing animation and display the main menu.
     private IEnumerator Back()
     {
         animator.SetTrigger("Close");

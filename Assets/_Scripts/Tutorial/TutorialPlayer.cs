@@ -1,8 +1,9 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+
+// Simplified player script for the turorial level.  See player script for additional comments
 public class TutorialPlayer : MonoBehaviour
 {
     [Header("Player Settings")]
@@ -45,7 +46,6 @@ public class TutorialPlayer : MonoBehaviour
         }
     }
 
-    // Launch a lightning bolt towards the mouse's position
     void ShootLightning()
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);

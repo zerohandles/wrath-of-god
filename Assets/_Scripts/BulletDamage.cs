@@ -21,6 +21,7 @@ public class BulletDamage : MonoBehaviour
         audioSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.transform.GetComponent<EnemyMovement>())
@@ -28,12 +29,15 @@ public class BulletDamage : MonoBehaviour
             return;
         }
 
+        // Update the score for every enemy hit
         foreach (Enemy enemy in GameManager.instance.spawnManager.enemies)
         {
             if (collision.gameObject.CompareTag(enemy.tag))
             {
                 GameManager.instance.ChangeScore(enemy.value);
                 GameManager.instance.UpdateUI();
+
+                // Track whether any enemies were hit by the bullet
                 hitEnemy = true;
             }
         }
@@ -41,6 +45,7 @@ public class BulletDamage : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Instantiate an explosion effect at the point of impact with the ground
         if (collision.gameObject.CompareTag("Ground"))
         {
             audioSource.PlayOneShot(impactSound);
@@ -48,6 +53,7 @@ public class BulletDamage : MonoBehaviour
             effect.transform.SetParent(effectsContainer.transform);
             Destroy(effect, 1f);
 
+            // If no enemies are hit, reset the combo multiplier 
             if (!hitEnemy)
             {
                 GameManager.instance.combo = 0;

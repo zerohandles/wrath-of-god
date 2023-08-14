@@ -22,6 +22,7 @@ public class EnemyMovement : MonoBehaviour
     private readonly float floodWall = -8;
     private bool isInFlood = false;
 
+    // Reset movement parameters and animation after retrieving from the enemy pool
     private void OnEnable()
     {
         SetRandomSpeed();
@@ -38,6 +39,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Update()
     {
+        //  Move enemy towards the floodwall when the flood is active
         if (isInFlood && !isStopped)
         {
             var step = floodSpeed * Time.deltaTime;
@@ -55,6 +57,7 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
+        // Stop movement after the move timer reaches 0
         moveTimer -= Time.deltaTime;
         if (moveTimer <= 0)
         {
@@ -66,6 +69,7 @@ public class EnemyMovement : MonoBehaviour
         transform.Translate(speed * Time.deltaTime * Vector2.right);
     }
 
+    // After a certain amount of time, reset movement parameters and animation
     IEnumerator StopMovementTimer()
     {
         yield return new WaitForSeconds(Random.Range(stopTimerMin, stopTimerMax));
@@ -75,22 +79,26 @@ public class EnemyMovement : MonoBehaviour
         animator.SetFloat("speed", 1);
     }
 
+    // Called on enable and everytime enemy starts moving.
     private void SetRandomSpeed()
     {
         speed = Random.Range(minSpeed, maxSpeed);
     }
 
+    // Called on enable and everytime enemy starts moving.
     private void SetMoveTimer()
     {
         moveTimer = Random.Range(moveTimerMin, moveTimerMax);
     }
 
+    // After exiting a tornado's effect radius, reset velocity to zero to prevent enemy from flying off the screen
     void EndTornadoEffect()
     {
         rb.velocity = Vector3.zero;
         transform.rotation = Quaternion.identity;
     }
 
+    // Reset enemy's velocity after the flood ends to continue normal movement/animation
     void EndFloodEffect()
     {
         rb.velocity = Vector3.zero;
@@ -107,6 +115,7 @@ public class EnemyMovement : MonoBehaviour
         }
     }
 
+    // End the effects of a power upon exiting its trigger collider
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.transform.CompareTag("Tornado"))

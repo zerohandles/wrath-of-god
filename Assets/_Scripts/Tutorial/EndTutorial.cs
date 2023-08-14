@@ -7,5 +7,4 @@ public class EndTutorial : MonoBehaviour
     {
         SceneManager.LoadScene("Level1");
     }
-
 }

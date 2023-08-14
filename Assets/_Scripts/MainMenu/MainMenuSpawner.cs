@@ -1,7 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+// Simplified spawn manager for the main menu background animation
 public class MainMenuSpawner : MonoBehaviour
 {
     public Enemy[] enemies;
@@ -24,6 +24,7 @@ public class MainMenuSpawner : MonoBehaviour
         }
     }
 
+    // Spawn enemies along the edges of the screen
     IEnumerator SpawnEnemy(Enemy enemy)
     {
         yield return new WaitForSeconds(enemy.spawnDelay);

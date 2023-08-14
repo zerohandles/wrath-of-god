@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class BulletMove : MonoBehaviour
 {
-    public float speed;
+    [SerializeField] private float speed;
     private readonly float lifeTime = 5f;
     private float timer;
 
     void Update()
     {
+        // Destroy stray bullets that don't impact the ground after a set amount of time
         timer += Time.deltaTime;
-        // Add object pooling
         if (timer > lifeTime)
         {
             Destroy(gameObject);

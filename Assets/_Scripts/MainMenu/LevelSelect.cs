@@ -20,6 +20,7 @@ public class LevelSelect : MonoBehaviour
 
         int levelReached = PlayerPrefs.GetInt("levelReached", 1);
 
+        // Set each level button beyond the levelReached player pref to non-interacttable
         for (int i = 0; i < levelButtons.Length; i++)
         {
             if (i + 1 > levelReached)
@@ -32,6 +33,7 @@ public class LevelSelect : MonoBehaviour
             }
         }
 
+        // If unlocked make the secret level button interactable
         if (PlayerPrefs.GetInt("secretLevel") == 1)
         {
             secretLevelText.text = "Final Day - Armageddon";
@@ -44,6 +46,7 @@ public class LevelSelect : MonoBehaviour
         StartCoroutine(LoadLevel(levelIndex));
     }
 
+    // Load the selected level
     IEnumerator LoadLevel(int levelIndex)
     {
         animator.SetTrigger("Close");

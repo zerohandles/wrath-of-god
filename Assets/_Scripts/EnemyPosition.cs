@@ -7,7 +7,7 @@ public class EnemyPosition : MonoBehaviour
     private readonly float xBoundary = 8.5f;
     private bool isLeft;
 
-
+    // Set the enemy's animation rotation and movement direction when reaching a screen boundary
     void Update()
     {
         if (transform.rotation.y == 1 || transform.rotation.y == -1)

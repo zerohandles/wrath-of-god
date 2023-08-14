@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+
+// Play Menu UI sound effects
 public class PlayOneShot : MonoBehaviour
 {
     public AudioSource audioSource;

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -13,10 +11,12 @@ public class MenuUI : MonoBehaviour
     public GameObject menuBackground;
     public AudioSource audioSource;
     public AudioClip scrollSound;
-    private int secretLevelIndex = 5;
-    private string finalLevelName = "Level5";
-    private string secretLevelName = "Level6";
+    private readonly int secretLevelIndex = 5;
+    private readonly string secretLevelName = "Level6";
+    private readonly string finalLevelName = "Level5";
 
+    // Called from GameOver in the Game Manager
+    // Set menu text based on player's final score and enable UI elements
     public void SetGameOverText(bool victory)
     {
         if (!victory)
@@ -50,8 +50,10 @@ public class MenuUI : MonoBehaviour
         }
         else
         {
+            // Load a victory screen if player is on the last level
             if(SceneManager.GetActiveScene().name == finalLevelName)
             {
+                // Load the secret level if player meet the condition
                 if (CheckSecretCondition())
                 {
                     SceneManager.LoadScene(secretLevelName);
@@ -62,6 +64,7 @@ public class MenuUI : MonoBehaviour
                 return;
             }
 
+            // Load true victory screen after beating the secret level
             if(SceneManager.GetActiveScene().name == secretLevelName)
             {
                 GoToVictoryScreen();
@@ -76,7 +79,6 @@ public class MenuUI : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == finalLevelName)
         {
-            // Add a toggle here using player prefs to go to the secret lvl if unlocked
             SceneManager.LoadScene("VictoryScene");
         }
         else if (SceneManager.GetActiveScene().name == secretLevelName)
@@ -85,6 +87,7 @@ public class MenuUI : MonoBehaviour
         }
     }
 
+    // Check player prefs if conditions for unlocking the final level have been met
     private bool CheckSecretCondition()
     {
         for (int i = 0; i < secretLevelIndex; i++)

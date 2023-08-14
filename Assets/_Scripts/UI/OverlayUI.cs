@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
@@ -10,7 +9,7 @@ public class OverlayUI : MonoBehaviour
     public Slider wrathBar;
     public TextMeshProUGUI comboText;
     public GameObject levelHeader;
-    private float titleOnScreenTimer = 4f;
+    private readonly float titleOnScreenTimer = 4f;
 
     #region singleton
     public static OverlayUI instance;

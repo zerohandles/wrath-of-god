@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Alien : MonoBehaviour
@@ -33,6 +32,7 @@ public class Alien : MonoBehaviour
     {
         var step = speed * Time.deltaTime;
 
+        // Update the target's position every frame to follow moving targets
         if(target != null)
         {
             targetPos = new Vector3(target.transform.position.x, offset, 0);
@@ -40,8 +40,10 @@ public class Alien : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
 
+        // Executed when at the target position
         if(Vector3.Distance(transform.position, targetPos) < 0.0001f)
         {
+            
             if (hasTarget)
             {
                 StartCoroutine(AbductTarget());
@@ -49,6 +51,7 @@ public class Alien : MonoBehaviour
                 return;
             }
 
+            // Enable the mothership and reset varibles after returning to the starting point
             if (abductedTarget)
             {
                 alienMotherShip.SetActive(true);
@@ -59,11 +62,16 @@ public class Alien : MonoBehaviour
         }
     }
 
+
+    // Repeatedly search for a valid target every .2 seconds until one is found.
     IEnumerator FindTarget()
     {
         if(GameObject.FindGameObjectWithTag("Cow"))
         {
             target = GameObject.FindGameObjectWithTag("Cow");
+
+            /* Disable the target's colliders to avoid the target being destroyed before
+            animations and coroutine's finish executing */
             foreach (Collider2D col in target.GetComponents<Collider2D>())
             {
                 col.enabled = false;
@@ -79,6 +87,7 @@ public class Alien : MonoBehaviour
         }
     }
 
+    // Play abduction animation and return to starting point
     IEnumerator AbductTarget()
     {
         animator.SetTrigger("Above_target");

@@ -12,7 +12,7 @@ public class BackgroundMeteor : MonoBehaviour
 
     [SerializeField] private float speed;
 
-
+    // Set a random target angle to move along
     private void OnEnable()
     {
         target = new Vector3(Random.Range(-targetXRange, targetXRange), targetY, 0);
@@ -25,6 +25,7 @@ public class BackgroundMeteor : MonoBehaviour
     {
         if (timer > lifeTime)
         {
+            // TODO: add object pooling for meteors
             Destroy(gameObject);
         }
 

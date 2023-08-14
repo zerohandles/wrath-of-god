@@ -1,21 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AlienBoss : MonoBehaviour
 {
     private Animator animator;
-    public GameObject laser;
     private Animator laserAnimator;
-    public AudioSource audioSource;
-    public AudioClip explosionSound;
+    [SerializeField] private GameObject laser;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip explosionSound;
 
     private bool isInPosition = false;
     private Vector3 firingPos = new Vector3(0, 4.8f, 0);
     private Vector3 startingPos;
     private Vector3 targetPos;
 
-    private float speed = 1f;
+    private readonly float speed = 1f;
 
 
     private void OnEnable()
@@ -38,6 +37,7 @@ public class AlienBoss : MonoBehaviour
             return;
         }
 
+        // Move towards the target position and take action.
         var step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
 
@@ -49,6 +49,7 @@ public class AlienBoss : MonoBehaviour
 
     }
 
+    // Take action based on current target position
     void TakeAction()
     {
         if (targetPos == startingPos)
@@ -62,6 +63,7 @@ public class AlienBoss : MonoBehaviour
         }
     }
 
+    // Play laser animation and SFX.
     IEnumerator FireLaser()
     {
         animator.SetTrigger("Fire");

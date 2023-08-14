@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,23 +7,28 @@ public class GameManager : MonoBehaviour
     private MenuUI menuUI;
     private UITimer timer;
     public AudioSource sFXSource;
-    public int innocentsKilled = 0;
-    [SerializeField] int innocentsSpawned;
-    public int totalKilled = 0;
 
-    public float PointsToWin { get; private set; }
+    [Header("Units")]
+    [SerializeField] int totalInnocentsInLevel;
+    [HideInInspector] public int innocentsKilled = 0;
+    [HideInInspector] public int totalKilled = 0;
+
+    [Header("Score and Combo")]
     [SerializeField] private float m_pointsToWin;
+    public float PointsToWin { get; private set; }
     public float score;
-    public float combo = 0;
+    [HideInInspector] public float combo = 0;
     [SerializeField] private float comboTimeLimit = 1.5f;
-    public float comboTimer = 0;
+    [SerializeField] private float comboTimer = 0;
 
-    [SerializeField] private int nextLevel;
-    [SerializeField] private int levelIndex;
-    public bool isGameOver;
+    [Header("Victory Player Pref Data")]
+    [SerializeField] private int nextLevelNumber;
+    [SerializeField] private int currentLevelIndex;
+    [HideInInspector] public bool isGameOver;
 
     void Awake()
     {
+    #region "Singleton"
         if (instance == null)
         {
             instance = this;
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        #endregion
 
         spawnManager = gameObject.GetComponent<SpawnManager>();
         menuUI = gameObject.GetComponent<MenuUI>();
@@ -50,7 +52,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (timer.TimeRemaining <= 0.0f)
+        // Trigger game over if time runs out
+        if (timer.TimeRemaining <= 0.0f && !isGameOver)
         {
             GameOver();
         }
@@ -64,38 +67,47 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // Set game over and check if player won or lost the level
     void GameOver()
     {
-        if (!isGameOver)
-        {
-            isGameOver = true;
-            sFXSource.Stop();
+        isGameOver = true;
+        
+        // Had to stop SFX to avoid last SFX getting stuck playing in a loop 
+        sFXSource.Stop();
 
-            if(score < PointsToWin)
+        // If player lost, set game over text and UI elements
+        if(score < PointsToWin)
+        {
+            menuUI.SetGameOverText(false);
+        }
+
+        // If player won set victory text/UI element. Update player prefs with level complete
+        else if (score >= PointsToWin)
+        {
+            menuUI.SetGameOverText(true);
+            if (PlayerPrefs.GetInt("levelReached") < nextLevelNumber)
             {
-                menuUI.SetGameOverText(false);
+                PlayerPrefs.SetInt("levelReached", nextLevelNumber);
             }
-            else if (score >= PointsToWin)
+
+            // Condition for unlocking the secret level
+            if (innocentsKilled == totalInnocentsInLevel)
             {
-                menuUI.SetGameOverText(true);
-                if (PlayerPrefs.GetInt("levelReached") < nextLevel)
-                {
-                    PlayerPrefs.SetInt("levelReached", nextLevel);
-                }
-                if (innocentsKilled == innocentsSpawned)
-                {
-                    PlayerPrefs.SetInt("level" + levelIndex, 1);
-                }
+                PlayerPrefs.SetInt("level" + currentLevelIndex, 1);
             }
+
+            PlayerPrefs.Save();
         }
     }
 
+    // Update the player's score and kill count
     public void ChangeScore(float value)
     {
         score += value * (1 + combo);
         totalKilled += 1;
     }
 
+    // Update the score keeping UI elements
     public void UpdateUI()
     {
         combo += .01f;
@@ -104,6 +116,7 @@ public class GameManager : MonoBehaviour
         OverlayUI.instance.UpdateComboText();
     }
 
+    // Score innocent enemies when they are rescued rather than killed.
     public void ScoreInnocent(GameObject target)
     {
         foreach (Enemy enemy in spawnManager.enemies)

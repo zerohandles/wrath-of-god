@@ -1,7 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+
+// Scripted events for the tutorial scene
 public class TutorialTimedEvents : MonoBehaviour
 {
     [SerializeField] private TutorialPlayer player;

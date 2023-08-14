@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -22,20 +21,23 @@ public class Player : MonoBehaviour
     public GameObject tornado;
     public Texture2D tornadoCursor;
     public CursorMode cursorMode = CursorMode.Auto;
-    public Vector2 cursorOffset = Vector2.zero;
+    [SerializeField] private Vector2 cursorOffset = Vector2.zero;
     private bool tornadoReady;
 
 
     private void Update()
     {
+        // On left click fire a bullet towards the mouse position
         timer += Time.deltaTime;
         if (Input.GetMouseButtonDown(0) && fireRate <= timer)
         {
+            // Prevent firing if mouse is over a UI element
             if (EventSystem.current.IsPointerOverGameObject())
             {
                 return;
             }
 
+            // Prevent firing is player is placing a tornado
             if (tornadoReady)
             {
                 Tornado();
@@ -45,7 +47,8 @@ public class Player : MonoBehaviour
             ShootLightning();
             timer = 0f;
         }
-
+        
+        // Right click to attempt to rescue an innocent enemy
         if (Input.GetMouseButtonDown(1))
         {
             if (EventSystem.current.IsPointerOverGameObject())
@@ -67,11 +70,12 @@ public class Player : MonoBehaviour
         Instantiate(lightningBolt, firePoint.transform.position, Quaternion.Euler(0, 0, angle));   
     }
 
+    // Summon a tornado at the mouse position
     public void Tornado()
     {
+        // Change cursor to tornado cursor 
         if (!tornadoReady)
         {
-            Debug.Log("Tornado Started");
             Cursor.SetCursor(tornadoCursor, cursorOffset, cursorMode);
             tornadoReady = true;
             return;
@@ -83,6 +87,7 @@ public class Player : MonoBehaviour
         tornadoReady = false;
     }
 
+    // Attempt to find an innocent enemy within the rescue radius of the mouse's position
     void DetectInnocent()
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -103,8 +108,10 @@ public class Player : MonoBehaviour
         }
     }
 
+    // Start the rescue animation and score the innocent rescued
     void RescueInnocent(GameObject target)
     {
+        // Prevent multiple rescues at once to avoid graphical errors
         if (rescueInProgress)
         {
             return;
@@ -118,6 +125,7 @@ public class Player : MonoBehaviour
         GameManager.instance.ScoreInnocent(target);
     }
 
+    // Activate the line renderer rescue light on the passed in target
     IEnumerator ActivateRescueLight(GameObject target)
     {
         float timeElapsed = 0f;
@@ -127,6 +135,7 @@ public class Player : MonoBehaviour
 
         rescueLight.SetPosition(0, lineStart);
 
+        // Move the rescue light from offscreen to the target
         while (timeElapsed < lerpDuration)
         {
             float factor = timeElapsed / lerpDuration;
@@ -143,6 +152,7 @@ public class Player : MonoBehaviour
 
         yield return new WaitForSeconds(.5f);
 
+        // Move the rescue light and target towards the top of the screen
         while (timeElapsed < lerpDuration)
         {
             float factor = timeElapsed / lerpDuration;

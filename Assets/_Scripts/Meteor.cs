@@ -6,8 +6,8 @@ public class Meteor : MonoBehaviour
 {
     private Animator animator;
     private Vector3 target;
-    private float targetXRange = 8.3f;
-    private float targetY = -2;
+    private readonly float targetXRange = 8.3f;
+    private readonly float targetY = -2;
 
     [SerializeField] private float speed;
     private bool isMoving = true;
@@ -16,6 +16,7 @@ public class Meteor : MonoBehaviour
     public AudioClip impactSound;
 
 
+    // Set a random target position on screen. Rotate to match angle of target position
     private void OnEnable()
     {
         target = new Vector3(Random.Range(-targetXRange, targetXRange), targetY, 0);
@@ -39,6 +40,7 @@ public class Meteor : MonoBehaviour
         transform.Translate(speed * Time.deltaTime * Vector3.right, Space.Self);
     }
 
+    // Destroy meteor when it hits the ground and play impact animation/SFX
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -57,6 +59,7 @@ public class Meteor : MonoBehaviour
             return;
         }
 
+        // Score any enemies hit
         foreach (Enemy enemy in GameManager.instance.spawnManager.enemies)
         {
             if (collision.gameObject.CompareTag(enemy.tag))

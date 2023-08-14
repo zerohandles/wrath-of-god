@@ -1959,15 +1959,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnManager: {fileID: 1037698509}
   sFXSource: {fileID: 14762120}
-  innocentsSpawned: 4
+  totalInnocentsInLevel: 4
+  innocentsKilled: 0
   totalKilled: 0
   m_pointsToWin: 150000
   score: 0
   combo: 0
   comboTimeLimit: 1.5
   comboTimer: 0
-  nextLevel: 5
-  levelIndex: 3
+  nextLevelNumber: 5
+  currentLevelIndex: 3
   isGameOver: 0
 --- !u!114 &1037698511
 MonoBehaviour:

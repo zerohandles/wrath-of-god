@@ -6,6 +6,8 @@ public class FadeEffectAudio : MonoBehaviour
 {
     public AudioSource audioSource;
 
+
+    // Fade audio towards the target volume over the duration in seconds.
     public IEnumerator FadeAudio(float targetVolume, float duration)
     {
         float time = 0;

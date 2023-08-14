@@ -19,7 +19,7 @@ public class PowerButtons : MonoBehaviour
     [SerializeField] private float meteorStormTimer = 20;
     [SerializeField] private Button meteorStormButton;
 
-
+    // Disable all power buttons at the start of the level
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -49,6 +49,8 @@ public class PowerButtons : MonoBehaviour
 
     public void ActivateMeteorStorm()
     {
+        // Ability to toggle off the meteors, was used in the secret level originally.
+        // May be implemented again in the future
         if (meteorStorm.activeInHierarchy)
         {
             meteorStorm.SetActive(false);
@@ -59,6 +61,7 @@ public class PowerButtons : MonoBehaviour
         StartCoroutine(DisablePower(meteorStormButton, meteorStormTimer));
     }
 
+    // Disables the power button for the provided amount of time
     IEnumerator DisablePower(Button button, float timer)
     {
         button.interactable = false;

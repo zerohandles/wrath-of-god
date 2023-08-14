@@ -12,6 +12,7 @@ public class ExplosionDamage : MonoBehaviour
             return;
         }
 
+        // Score each enemy that collides with the explosion
         foreach (Enemy enemy in GameManager.instance.spawnManager.enemies)
         {
             if (collision.gameObject.CompareTag(enemy.tag))

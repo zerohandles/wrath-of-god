@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
@@ -14,6 +12,7 @@ public class UITimer : MonoBehaviour
         TimeRemaining = m_TimeRemaining;
     }
 
+    // Update the timer every frame
     void Update()
     {
         TimeRemaining -= Time.deltaTime;
@@ -21,6 +20,7 @@ public class UITimer : MonoBehaviour
         DisplayTime(TimeRemaining);
     }
 
+    // Display the current time remaining in the level
     void DisplayTime(float timeInSeconds)
     {
         // Add 1 second to continue displaying 1 second when less than 1/2 second remains

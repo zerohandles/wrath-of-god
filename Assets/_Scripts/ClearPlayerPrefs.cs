@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Used during testing to modify player prefs and level unlocking
 public class ClearPlayerPrefs : MonoBehaviour
 {
     public void ClearPrefs()

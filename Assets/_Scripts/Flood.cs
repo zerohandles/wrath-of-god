@@ -15,9 +15,7 @@ public class Flood : MonoBehaviour
     private float targetVolume;
     private readonly float lerpDuration = 5;
 
-
-
-
+    // Reset the flood position and target position when enabled
     void OnEnable()
     {
         transform.position = startingPos;
@@ -32,11 +30,13 @@ public class Flood : MonoBehaviour
         fader = GetComponent<FadeEffectAudio>();
     }
 
+    // Slowly move towards the target postion
     void Update()
     {
         var step = speed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, step);
 
+        // Take action when nearing the target position
         if (Vector3.Distance(transform.position, target) < 0.0001f && !isRising)
         {
             isRising = true;
@@ -49,6 +49,7 @@ public class Flood : MonoBehaviour
         }
     }
 
+    // Pause the flood at the highest point and reset the target position to the starting position
     IEnumerator PauseMovement()
     {
         yield return new WaitForSeconds(pauseTime);
