@@ -35,6 +35,7 @@ public class MenuUI : MonoBehaviour
         menuUI.SetActive(true);
         audioSource.PlayOneShot(scrollSound);
         menuBackground.SetActive(true);
+        CheckSecretCondition();
     }
 
     public void MenuButton()
@@ -98,6 +99,7 @@ public class MenuUI : MonoBehaviour
             }
         }
         PlayerPrefs.SetInt("secretLevel", 1);
+        PlayerPrefs.Save();
         return true;
     }
 }
