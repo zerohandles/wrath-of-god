@@ -8,24 +8,24 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject lightningBolt;
     [SerializeField] private GameObject firePoint;
     [SerializeField] private float fireRate = 0.1f;
-    private float timer;
+    float timer;
 
     [Header("Rescue Innocents")]
     [SerializeField] private float rescueRadius = .5f;
     [SerializeField] ContactFilter2D rescueLayerMask;
     [SerializeField] private LineRenderer rescueLight;
-    private bool rescueInProgress = false;
+    bool rescueInProgress = false;
     Collider2D[] result = new Collider2D[1];
 
     [Header("Tornado Settings")]
+    [SerializeField] private Vector2 cursorOffset = Vector2.zero;
     public GameObject tornado;
     public Texture2D tornadoCursor;
     public CursorMode cursorMode = CursorMode.Auto;
-    [SerializeField] private Vector2 cursorOffset = Vector2.zero;
-    private bool tornadoReady;
+    bool tornadoReady;
 
 
-    private void Update()
+    void Update()
     {
         // On left click fire a bullet towards the mouse position
         timer += Time.deltaTime;
@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
                 return;
             }
 
-            // Prevent firing is player is placing a tornado
+            // Use tornado power if tornado is queued instead of standard firing
             if (tornadoReady)
             {
                 Tornado();
@@ -52,9 +52,7 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             if (EventSystem.current.IsPointerOverGameObject())
-            {
                 return;
-            }
 
             DetectInnocent();
         }
