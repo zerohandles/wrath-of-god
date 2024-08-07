@@ -8,7 +8,7 @@ public class BackgroundMeteor : MonoBehaviour
     ObjectPool<BackgroundMeteor> _pool;
     Vector3 target;
     readonly float targetXRange = 8.3f;
-    readonly float targetY = -2;
+    readonly float targetY = -3.5f;
     readonly float lifeTime = 2;
     float timer = 0;
 
@@ -29,7 +29,12 @@ public class BackgroundMeteor : MonoBehaviour
             _pool.Release(this);
         }
 
-        transform.Translate(speed * Time.deltaTime * Vector3.right, Space.Self);
+        Vector3 direction = (target - transform.position).normalized;
+        transform.position += direction * speed * Time.deltaTime;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+
         timer += Time.deltaTime;
     }
 

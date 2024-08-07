@@ -11,7 +11,7 @@ public class Meteor : MonoBehaviour
     Animator animator;
     Vector3 target;
     readonly float targetXRange = 8.3f;
-    readonly float targetY = -2;
+    readonly float targetY = -2.3f;
     bool isMoving = true;
     public AudioSource audioSource;
     public AudioClip impactSound;
@@ -25,30 +25,32 @@ public class Meteor : MonoBehaviour
         Vector3 dir = (target - transform.position).normalized;
         float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        Debug.Log($"Meteor enabled. Target: {target}, Direction: {dir}, Angle: {angle}");
     }
 
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
+    void Start() => animator = GetComponent<Animator>();
 
     private void Update()
     {
         if (!isMoving)
             return;
 
-        transform.Translate(speed * Time.deltaTime * Vector3.right, Space.Self);
-        Debug.Log($"Meteor moving. Position: {transform.position}");
+        // Triggers expplosion when meteor is near target even if it doesn't collide with the ground
+        if (Vector3.Distance(target, transform.position) <= 0.1f)
+            StartCoroutine(TriggerExplosion());
+
+        Vector3 direction = (target - transform.position).normalized;
+        transform.position += direction * speed * Time.deltaTime;
+
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
     IEnumerator TriggerExplosion()
     {
+        isMoving = false;
+        animator.SetTrigger("Impact");
         transform.rotation = Quaternion.identity;
         audioSource.PlayOneShot(impactSound);
-        animator.SetTrigger("Impact");
-        isMoving = false;
         yield return new WaitForSeconds(1);
         _pool.Release(this);
     }
@@ -57,7 +59,9 @@ public class Meteor : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
+        {
             StartCoroutine(TriggerExplosion());
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -75,6 +79,5 @@ public class Meteor : MonoBehaviour
             }
         }
     }
-
     public void SetPool(ObjectPool<Meteor> pool) => _pool = pool;
 }
