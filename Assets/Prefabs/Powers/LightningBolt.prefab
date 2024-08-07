@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7520269798771638732}
   - component: {fileID: 8198123650416558711}
-  - component: {fileID: 8215369744694351930}
-  - component: {fileID: 4633127519635935531}
   - component: {fileID: 3222215428300182484}
+  - component: {fileID: 4633127519635935531}
   m_Layer: 7
   m_Name: LightningBolt
   m_TagString: Lightning
@@ -34,7 +33,7 @@ Transform:
   m_Children:
   - {fileID: 1461451784111655085}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8198123650416558711
 SpriteRenderer:
@@ -88,7 +87,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8215369744694351930
+--- !u!114 &3222215428300182484
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -97,10 +96,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2750333316840021360}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b49e2d1bcf68c7d4898e18be861cec33, type: 3}
+  m_Script: {fileID: 11500000, guid: 741e852004c78ff46848f51f5f9be38a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 13
+  explosionPoint: {fileID: 5984062123663724016}
+  explosionEffect: {fileID: 1421110193048485766, guid: 7bab986ba4b11d44cb7a93c33f40ae63, type: 3}
+  impactSound: {fileID: 8300000, guid: 5b85c535fd2fbed4ca94d218f6a66ddf, type: 3}
+  movementSpeed: 13
 --- !u!60 &4633127519635935531
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -188,21 +190,6 @@ PolygonCollider2D:
       - {x: 0.01, y: -0.46}
       - {x: 0.44017044, y: -0.1544571}
   m_UseDelaunayMesh: 0
---- !u!114 &3222215428300182484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2750333316840021360}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 741e852004c78ff46848f51f5f9be38a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionPoint: {fileID: 5984062123663724016}
-  explosionEffect: {fileID: 1421110193048485766, guid: 7bab986ba4b11d44cb7a93c33f40ae63, type: 3}
-  impactSound: {fileID: 8300000, guid: 5b85c535fd2fbed4ca94d218f6a66ddf, type: 3}
 --- !u!1 &5984062123663724016
 GameObject:
   m_ObjectHideFlags: 0

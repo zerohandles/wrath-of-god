@@ -65,7 +65,10 @@ public class Player : MonoBehaviour
         Vector2 dir = (mousePosition - (Vector2)transform.position).normalized;
         float angle = Vector2.SignedAngle(Vector2.down, dir);
 
-        Instantiate(lightningBolt, firePoint.transform.position, Quaternion.Euler(0, 0, angle));   
+        var shot = PoolManager.Instance.GetLightningBolt();
+        shot.transform.SetPositionAndRotation(firePoint.transform.position, Quaternion.Euler(0, 0, angle));
+
+        //Instantiate(lightningBolt, firePoint.transform.position, Quaternion.Euler(0, 0, angle));   
     }
 
     // Summon a tornado at the mouse position

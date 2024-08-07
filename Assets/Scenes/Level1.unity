@@ -3139,10 +3139,10 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   rescueLight: {fileID: 777132077}
+  cursorOffset: {x: 55, y: 55}
   tornado: {fileID: 6321922287762369906, guid: 145e5f282716f854b82e1c2dd40ee4da, type: 3}
   tornadoCursor: {fileID: 2800000, guid: 37016ae28a9ae26459d8e6a1f7e36e18, type: 3}
   cursorMode: 0
-  cursorOffset: {x: 55, y: 55}
 --- !u!1 &1731764932
 GameObject:
   m_ObjectHideFlags: 0
@@ -3211,6 +3211,51 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -9}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1946014394
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1946014396}
+  - component: {fileID: 1946014395}
+  m_Layer: 0
+  m_Name: PoolManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1946014395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946014394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0986072d9f09f1044bed59e311d837dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightningPrefab: {fileID: 3222215428300182484, guid: b4c870d6484e5254e90365a177be34be, type: 3}
+--- !u!4 &1946014396
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1946014394}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -55.160877, y: 26.11846, z: 2.1704605}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2047067982
 PrefabInstance:
   m_ObjectHideFlags: 0

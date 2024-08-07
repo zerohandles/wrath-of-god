@@ -1,19 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
-public class BulletDamage : MonoBehaviour
+public class LightningBolt : MonoBehaviour
 {
-    private bool hitEnemy = false;
+    [Header("Explosion")]
+    [SerializeField] GameObject explosionPoint;
+    [SerializeField] GameObject explosionEffect;
+    [SerializeField] AudioClip impactSound;
+    GameObject effectsContainer;
+    AudioSource audioSource;
+    bool hitEnemy = false;
 
-    public GameObject explosionPoint;
-    public GameObject explosionEffect;
+    [Header("Movement")]
+    [SerializeField] float movementSpeed;
+    readonly float lifeTime = 5f;
+    float timer;
 
-    private GameObject effectsContainer;
+    ObjectPool<LightningBolt> _pool;
 
-    private AudioSource audioSource;
-    public AudioClip impactSound;
-
+    private void OnEnable()
+    {
+        timer = 0;
+        hitEnemy = false;
+    }
 
     private void Start()
     {
@@ -21,13 +33,23 @@ public class BulletDamage : MonoBehaviour
         audioSource = GameObject.Find("SFXSource").GetComponent<AudioSource>();
     }
 
+    void Update()
+    {
+        // Destroy stray bullets that don't impact the ground after a set amount of time
+        timer += Time.deltaTime;
+        if (timer > lifeTime)
+        {
+            //Destroy(gameObject);
+            _pool.Release(this);
+        }
+
+        transform.Translate(movementSpeed * Time.deltaTime * Vector2.down, Space.Self);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.transform.GetComponent<EnemyMovement>())
-        {
             return;
-        }
 
         // Update the score for every enemy hit
         foreach (Enemy enemy in GameManager.instance.spawnManager.enemies)
@@ -59,7 +81,10 @@ public class BulletDamage : MonoBehaviour
                 GameManager.instance.combo = 0;
                 OverlayUI.instance.UpdateComboText();
             }
-            Destroy(gameObject);
+            // Destroy(gameObject);
+            _pool.Release(this);
         }
     }
+
+    public void SetPool(ObjectPool<LightningBolt> pool) => _pool = pool;
 }
