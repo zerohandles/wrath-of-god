@@ -11,21 +11,14 @@ public class EnemyPosition : MonoBehaviour
     void Update()
     {
         if (transform.rotation.y == 1 || transform.rotation.y == -1)
-        {
             isLeft = true;
-        }
         else if (transform.rotation.y == 0)
-        {
             isLeft = false;
-        }
 
         if (isLeft && transform.position.x <= -xBoundary)
-        {
             transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
+
         if (!isLeft && transform.position.x >= xBoundary)
-        {
             transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
     }
 }

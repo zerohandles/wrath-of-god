@@ -8,6 +8,7 @@ public class PoolManager : MonoBehaviour
     ObjectPool<LightningBolt> lightningPool;
     [SerializeField] LightningBolt lightningPrefab;
 
+
     public static PoolManager Instance { get; private set; }
 
     void Awake()
@@ -28,6 +29,7 @@ public class PoolManager : MonoBehaviour
             t => t.gameObject.SetActive(false)
             );
     }
+
 
     public LightningBolt GetLightningBolt() => lightningPool.Get();
 }

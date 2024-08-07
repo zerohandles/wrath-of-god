@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -29,34 +30,44 @@ public class SpawnManager : MonoBehaviour
                 GameObject obj = Instantiate(enemy.enemyPrefab);
                 obj.transform.SetParent(enemyContainer.transform);
                 return obj;
-            }, enemyPrefab =>
-            {
-                enemyPrefab.gameObject.SetActive(true);
-            }, enemyPrefab =>
-            {
-                enemyPrefab.gameObject.SetActive(false);
-            }, enemyPrefab =>
-            {
-                Destroy(enemyPrefab.gameObject);
-            }, true, (int)enemy.spawnLimit, (int)enemy.spawnLimit + 10);
+            }, 
+            enemyPrefab => enemyPrefab.SetActive(true),
+            enemyPrefab => enemyPrefab.SetActive(false),
+            enemyPrefab => Destroy(enemyPrefab),
+            true,
+            (int)enemy.spawnLimit,
+            (int)enemy.spawnLimit + 10);
 
             ObjectPool<GameObject> effectPool = new ObjectPool<GameObject>(() =>
             {
                 GameObject obj = Instantiate(enemy.deathEffect);
                 obj.transform.SetParent(effectsContainer.transform);
                 return obj;
-            }, effectPrefab =>
-            {
-                effectPrefab.gameObject.SetActive(true);
-            }, effectPrefab =>
-            {
-                effectPrefab.gameObject.SetActive(false);
-            }, effectPrefab =>
-            {
-                Destroy(effectPrefab.gameObject);
-            }, true, (int)enemy.spawnLimit, (int)enemy.spawnLimit + 20);
+            }, 
+            effectPrefab => effectPrefab.SetActive(true),
+            effectPrefab => effectPrefab.SetActive(false),
+            effectPrefab => Destroy(effectPrefab),
+            true, 
+            (int)enemy.spawnLimit, 
+            (int)enemy.spawnLimit + 20);
+
+            PreFillPool(effectPool, (int)enemy.spawnLimit);
 
             StartCoroutine(SpawnEnemy(enemy, pool, effectPool));
+        }
+    }
+
+    void PreFillPool(ObjectPool<GameObject> pool, int count)
+    {
+        List<GameObject> tempList = new List<GameObject>();
+        for (int i = 0; i < count; i++)
+        {
+            GameObject obj = pool.Get();
+            tempList.Add(obj);
+        }
+        foreach (GameObject obj in tempList)
+        {
+            pool.Release(obj);
         }
     }
 
@@ -79,19 +90,14 @@ public class SpawnManager : MonoBehaviour
             GameObject obj = prefabPool.Get();
             
             // Pass the enemy's prefab and death effect pool to the EnemyDeathEffect script for Release on death
-            EnemyDeathEffect death = obj.gameObject.GetComponent<EnemyDeathEffect>();
-            death.prefabPool = prefabPool;
-            death.effectPool = effectPool;
+            EnemyDeathEffect death = obj.GetComponent<EnemyDeathEffect>();
+            death.SetPool(prefabPool, effectPool);
 
             // Place new enemy on 1 of the 2 outer edges of the screen
             if (spawnLocation == 0)
-            {
                 obj.transform.SetPositionAndRotation(spawnPos1, Quaternion.Euler(0, 0, 0));
-            }
             else
-            {
                 obj.transform.SetPositionAndRotation(spawnPos2, Quaternion.Euler(0, 180, 0));
-            }
             enemy.totalSpawned += 1;
         }
 
