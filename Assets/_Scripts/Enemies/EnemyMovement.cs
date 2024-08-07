@@ -1,29 +1,29 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private float speed;
-    private float moveTimer;
-    private bool isStopped = false;
-    
-    private Animator animator;
-    private Rigidbody2D rb;
+    [Header("Movement")]
+    [SerializeField] float maxSpeed = 1.5f;
+    [SerializeField] float minSpeed = .35f;
+    [SerializeField] float stopTimerMax = 8f;
+    [SerializeField] float stopTimerMin = 4f;
+    [SerializeField] float moveTimerMax = 8f;
+    [SerializeField] float moveTimerMin = 4f;
 
-    [SerializeField] private float maxSpeed = 1.5f;
-    [SerializeField] private float minSpeed = .35f;
-    [SerializeField] private float stopTimerMax = 8f;
-    [SerializeField] private float stopTimerMin = 4f;
-    [SerializeField] private float moveTimerMax = 8f;
-    [SerializeField] private float moveTimerMin = 4f;
+    [Header("Flood Effects")]
+    [SerializeField] float floodSpeed = 5;
 
-    [SerializeField] private float floodSpeed = 5;
-    private readonly float floodWall = -8;
-    private bool isInFlood = false;
+    Animator animator;
+    Rigidbody2D rb;
+    float speed;
+    float moveTimer;
+    readonly float floodWall = -8;
+    bool isStopped = false;
+    bool isInFlood = false;
 
     // Reset movement parameters and animation after retrieving from the enemy pool
-    private void OnEnable()
+    void OnEnable()
     {
         SetRandomSpeed();
         SetMoveTimer();
@@ -31,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
         isStopped = false;
     }
 
-    private void Awake()
+    void Awake()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -45,17 +45,13 @@ public class EnemyMovement : MonoBehaviour
             var step = floodSpeed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(floodWall, transform.position.y), step);
             if (Vector3.Distance(transform.position, new Vector3(floodWall, transform.position.y)) < 0.001f)
-            {
                 isStopped = true;
-            }
 
             return;
         }
 
         if (isStopped)
-        {
             return;
-        }
 
         // Stop movement after the move timer reaches 0
         moveTimer -= Time.deltaTime;
@@ -80,16 +76,10 @@ public class EnemyMovement : MonoBehaviour
     }
 
     // Called on enable and everytime enemy starts moving.
-    private void SetRandomSpeed()
-    {
-        speed = Random.Range(minSpeed, maxSpeed);
-    }
+    void SetRandomSpeed() => speed = Random.Range(minSpeed, maxSpeed);
 
     // Called on enable and everytime enemy starts moving.
-    private void SetMoveTimer()
-    {
-        moveTimer = Random.Range(moveTimerMin, moveTimerMax);
-    }
+    void SetMoveTimer() => moveTimer = Random.Range(moveTimerMin, moveTimerMax);
 
     // After exiting a tornado's effect radius, reset velocity to zero to prevent enemy from flying off the screen
     void EndTornadoEffect()
@@ -106,7 +96,7 @@ public class EnemyMovement : MonoBehaviour
         isStopped = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.transform.CompareTag("Flood"))
         {
@@ -116,16 +106,12 @@ public class EnemyMovement : MonoBehaviour
     }
 
     // End the effects of a power upon exiting its trigger collider
-    private void OnTriggerExit2D(Collider2D collision)
+    void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.transform.CompareTag("Tornado"))
-        {
             EndTornadoEffect();
-        }
 
         if (collision.transform.CompareTag("Flood"))
-        {
             EndFloodEffect();
-        }
     }
 }

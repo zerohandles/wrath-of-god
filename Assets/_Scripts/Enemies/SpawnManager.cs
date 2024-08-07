@@ -6,14 +6,13 @@ using UnityEngine.Pool;
 public class SpawnManager : MonoBehaviour
 {
     public Enemy[] enemies;
-    public GameObject enemyContainer;
-    public GameObject effectsContainer;
+    [SerializeField] GameObject enemyContainer;
+    [SerializeField] GameObject effectsContainer;
 
-    private readonly float xBoundary = 9.5f;
-    private readonly float groundOffset = -2.3f;
-
-    private Vector2 spawnPos1;
-    private Vector2 spawnPos2;
+    readonly float xBoundary = 9.5f;
+    readonly float groundOffset = -2.3f;
+    Vector2 spawnPos1;
+    Vector2 spawnPos2;
 
 
     void Start()
@@ -57,6 +56,7 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
+    // Prefill object pools to increase performance when Getting or Release many objects at once
     void PreFillPool(ObjectPool<GameObject> pool, int count)
     {
         List<GameObject> tempList = new List<GameObject>();
@@ -66,9 +66,7 @@ public class SpawnManager : MonoBehaviour
             tempList.Add(obj);
         }
         foreach (GameObject obj in tempList)
-        {
             pool.Release(obj);
-        }
     }
 
     // Continuously get enemies from thier pool and spawn them into the scene
@@ -76,15 +74,13 @@ public class SpawnManager : MonoBehaviour
     {
         // Stop from spawning more enemies than allowed in the scene
         if (enemy.totalSpawned >= enemy.maxSpawnable)
-        {
             yield break;
-        }
 
         // Spawn delay set for each enemy type
         yield return new WaitForSeconds(enemy.spawnDelay);
 
         // Spawn a new enemy if the on screen limit of that enemy type is not currently exceeded
-        if (enemy.spawnLimit > GameObject.FindGameObjectsWithTag(enemy.tag).Length && !GameManager.instance.isGameOver)
+        if (enemy.spawnLimit > GameObject.FindGameObjectsWithTag(enemy.tag).Length && !GameManager.Instance.isGameOver)
         {
             int spawnLocation = Random.Range(0, 2);
             GameObject obj = prefabPool.Get();

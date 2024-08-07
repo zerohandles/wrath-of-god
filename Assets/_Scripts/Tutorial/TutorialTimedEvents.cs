@@ -1,43 +1,45 @@
 using System.Collections;
 using UnityEngine;
 
-
 // Scripted events for the tutorial scene
 public class TutorialTimedEvents : MonoBehaviour
 {
-    [SerializeField] private TutorialPlayer player;
-    [SerializeField] private GameObject fog;
-    [SerializeField] private GameObject spriteMask1;
-    [SerializeField] private bool tutorialCompleted = false;
-    [SerializeField] private GameObject menuCanvas;
-    [SerializeField] private GameObject menuBackground;
+    [Header("Player")]
+    [SerializeField] TutorialPlayer player;
+    
+    [Header("UI Elements")]
+    [SerializeField] GameObject menuCanvas;
+    [SerializeField] GameObject menuBackground;
+    [SerializeField] GameObject fog;
+    [SerializeField] GameObject spriteMask1;
 
     [Header("Event 1")]
-    [SerializeField] private GameObject eventText1;
-    private bool event1Complete = false;
+    [SerializeField] GameObject eventText1;
+    bool event1Complete = false;
 
     [Header("Event 2")]
-    [SerializeField] private GameObject eventText2;
-    [SerializeField] private GameObject combo;
-    private bool event2Complete = false;
+    [SerializeField] GameObject eventText2;
+    [SerializeField] GameObject combo;
+    bool event2Complete = false;
 
     [Header("Event 3")]
-    [SerializeField] private GameObject eventText3;
-    [SerializeField] private GameObject wrathMask;
-    [SerializeField] private GameObject timerMask;
-    private bool event3Complete = false;
+    [SerializeField] GameObject eventText3;
+    [SerializeField] GameObject wrathMask;
+    [SerializeField] GameObject timerMask;
+    bool event3Complete = false;
 
     [Header("Event 4")]
-    [SerializeField] private GameObject eventText4;
-    [SerializeField] private GameObject innocentPrefab;
-    private bool event4Complete = false;
+    [SerializeField] GameObject eventText4;
+    [SerializeField] GameObject innocentPrefab;
+    bool event4Complete = false;
 
     [Header("Event 5")]
-    [SerializeField] private GameObject eventText5;
-    [SerializeField] private GameObject powersMask;
-    [SerializeField] private GameObject tornadoButton;
-    private bool event5Complete = false;
+    [SerializeField] GameObject eventText5;
+    [SerializeField] GameObject powersMask;
+    [SerializeField] GameObject tornadoButton;
+    bool event5Complete = false;
 
+    bool tutorialCompleted = false;
 
     void Start()
     {
@@ -48,25 +50,25 @@ public class TutorialTimedEvents : MonoBehaviour
 
     void Update()
     {
-        if (event1Complete && GameManager.instance.score > 0 && !event2Complete)
+        if (event1Complete && GameManager.Instance.score > 0 && !event2Complete)
         {
             event2Complete = true;
             StartCoroutine(SecondEvent());
         }
 
-        if (event2Complete && GameManager.instance.score > 300 && !event3Complete)
+        if (event2Complete && GameManager.Instance.score > 300 && !event3Complete)
         {
             event3Complete = true;
             StartCoroutine(ThirdEvent());
         }
 
-        if (event3Complete && GameManager.instance.score >= 400 && !event4Complete)
+        if (event3Complete && GameManager.Instance.score >= 400 && !event4Complete)
         {
             event4Complete = true;
             StartCoroutine(FourthEvent());
         }
 
-        if(event4Complete && GameManager.instance.score >= 2000 && !event5Complete)
+        if(event4Complete && GameManager.Instance.score >= 2000 && !event5Complete)
         {
             event5Complete = true;
             StartCoroutine(FifthEvent());
@@ -89,6 +91,7 @@ public class TutorialTimedEvents : MonoBehaviour
         spriteMask1.SetActive(true);
         eventText1.SetActive(true);
         yield return new WaitForSecondsRealtime(5);
+
         spriteMask1.SetActive(false);
         eventText1.SetActive(false);
         fog.SetActive(false);
@@ -107,6 +110,7 @@ public class TutorialTimedEvents : MonoBehaviour
         eventText2.SetActive(true);
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(10);
+
         fog.SetActive(false);
         spriteMask1.SetActive(false);
         eventText2.SetActive(false);
@@ -124,6 +128,7 @@ public class TutorialTimedEvents : MonoBehaviour
         eventText3.SetActive(true);
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(10);
+
         fog.SetActive(false);
         wrathMask.SetActive(false);
         timerMask.SetActive(false);
@@ -137,12 +142,14 @@ public class TutorialTimedEvents : MonoBehaviour
         player.canShoot = false;
         GameObject innocent = Instantiate(innocentPrefab, new Vector3(-9.5f, -2.4f, 0), Quaternion.identity);
         yield return new WaitForSeconds(3);
+
         Time.timeScale = 0;
         spriteMask1.transform.position = innocent.transform.position;
         fog.SetActive(true);
         spriteMask1.SetActive(true);
         eventText4.SetActive(true);
         yield return new WaitForSecondsRealtime(12);
+
         spriteMask1.SetActive(false);
         eventText4.SetActive(false);
         fog.SetActive(false);
@@ -158,6 +165,7 @@ public class TutorialTimedEvents : MonoBehaviour
         tornadoButton.SetActive(true);
         Time.timeScale = 0;
         yield return new WaitForSecondsRealtime(6);
+
         fog.SetActive(false);
         powersMask.SetActive(false);
         eventText5.SetActive(false);

@@ -3,14 +3,13 @@ using TMPro;
 
 public class UITimer : MonoBehaviour
 {
-    public TextMeshProUGUI timerText;
+    [Header("Timer UI Elements")]
+    [SerializeField] float m_TimeRemaining = 60;
+    [SerializeField] TextMeshProUGUI timerText;
+   
     public float TimeRemaining {get; private set; }
-    [SerializeField] private float m_TimeRemaining = 60;
 
-    private void Awake()
-    {
-        TimeRemaining = m_TimeRemaining;
-    }
+    void Awake() => TimeRemaining = m_TimeRemaining;
 
     // Update the timer every frame
     void Update()
@@ -25,9 +24,7 @@ public class UITimer : MonoBehaviour
     {
         // Add 1 second to continue displaying 1 second when less than 1/2 second remains
         if (timeInSeconds > 0)
-        {
             timeInSeconds += 1;
-        }
 
         float minutes = Mathf.FloorToInt(timeInSeconds / 60);
         float seconds = Mathf.FloorToInt(timeInSeconds % 60);

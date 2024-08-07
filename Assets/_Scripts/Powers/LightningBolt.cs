@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -52,12 +49,12 @@ public class LightningBolt : MonoBehaviour
             return;
 
         // Update the score for every enemy hit
-        foreach (Enemy enemy in GameManager.instance.spawnManager.enemies)
+        foreach (Enemy enemy in GameManager.Instance.spawnManager.enemies)
         {
             if (collision.gameObject.CompareTag(enemy.tag))
             {
-                GameManager.instance.ChangeScore(enemy.value);
-                GameManager.instance.UpdateUI();
+                GameManager.Instance.ChangeScore(enemy.value);
+                GameManager.Instance.UpdateUI();
 
                 // Track whether any enemies were hit by the bullet
                 hitEnemy = true;
@@ -78,11 +75,12 @@ public class LightningBolt : MonoBehaviour
             // If no enemies are hit, reset the combo multiplier 
             if (!hitEnemy)
             {
-                GameManager.instance.combo = 0;
+                GameManager.Instance.combo = 0;
                 OverlayUI.instance.UpdateComboText();
             }
             // Destroy(gameObject);
-            _pool.Release(this);
+            if(gameObject.activeSelf)
+                _pool.Release(this);
         }
     }
 

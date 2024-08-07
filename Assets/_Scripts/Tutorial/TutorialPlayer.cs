@@ -7,17 +7,16 @@ using UnityEngine.EventSystems;
 public class TutorialPlayer : MonoBehaviour
 {
     [Header("Player Settings")]
-    [SerializeField] private GameObject lightningBolt;
-    [SerializeField] private GameObject firePoint;
-    [SerializeField] private float fireRate = 0.1f;
-    private float timer;
+    [SerializeField] GameObject firePoint;
+    [SerializeField] float fireRate = 0.1f;
+    float timer;
 
     [Header("Rescue Innocents")]
-    [SerializeField] private float rescueRadius = .5f;
+    [SerializeField] float rescueRadius = .5f;
     [SerializeField] ContactFilter2D rescueLayerMask;
-    [SerializeField] private LineRenderer rescueLight;
-    private bool rescueInProgress = false;
+    [SerializeField] LineRenderer rescueLight;
     Collider2D[] result = new Collider2D[1];
+    bool rescueInProgress = false;
 
     public bool canShoot;
 
@@ -27,9 +26,7 @@ public class TutorialPlayer : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && fireRate <= timer)
         {
             if (EventSystem.current.IsPointerOverGameObject() || !canShoot) 
-            {
                 return;
-            }
 
             ShootLightning();
             timer = 0f;
@@ -38,9 +35,7 @@ public class TutorialPlayer : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             if (EventSystem.current.IsPointerOverGameObject())
-            {
                 return;
-            }
 
             DetectInnocent();
         }
@@ -52,23 +47,21 @@ public class TutorialPlayer : MonoBehaviour
         Vector2 dir = (mousePosition - (Vector2)transform.position).normalized;
         float angle = Vector2.SignedAngle(Vector2.down, dir);
 
-        Instantiate(lightningBolt, firePoint.transform.position, Quaternion.Euler(0, 0, angle));
+        // Get bullet from pool
+        var shot = PoolManager.Instance.GetLightningBolt();
+        shot.transform.SetPositionAndRotation(firePoint.transform.position, Quaternion.Euler(0, 0, angle));
     }
 
     void DetectInnocent()
     {
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
         System.Array.Clear(result, 0, result.Length);
-
         Physics2D.OverlapCircle(mousePosition, rescueRadius, rescueLayerMask, result);
 
         foreach (Collider2D c in result)
         {
             if (c == null)
-            {
                 return;
-            }
 
             GameObject innocent = c.gameObject;
             RescueInnocent(innocent);
@@ -78,17 +71,15 @@ public class TutorialPlayer : MonoBehaviour
     void RescueInnocent(GameObject target)
     {
         if (rescueInProgress)
-        {
             return;
-        }
 
         rescueInProgress = true;
 
         var innocent = target.transform.GetComponent<Innocent>();
         innocent.PrepareForRescue();
         StartCoroutine(ActivateRescueLight(target));
-        GameManager.instance.score += 5000;
-        GameManager.instance.UpdateUI();
+        GameManager.Instance.score += 5000;
+        GameManager.Instance.UpdateUI();
     }
 
     IEnumerator ActivateRescueLight(GameObject target)
@@ -103,11 +94,8 @@ public class TutorialPlayer : MonoBehaviour
         while (timeElapsed < lerpDuration)
         {
             float factor = timeElapsed / lerpDuration;
-
             rescueLight.SetPosition(1, Vector3.Lerp(lineStart, lineEnd, factor));
-
             timeElapsed += Mathf.Min(Time.deltaTime, lerpDuration - timeElapsed); 
-
             yield return null;
         }
 
@@ -119,12 +107,9 @@ public class TutorialPlayer : MonoBehaviour
         while (timeElapsed < lerpDuration)
         {
             float factor = timeElapsed / lerpDuration;
-
             rescueLight.SetPosition(1, Vector3.Lerp(lineEnd, lineStart, factor));
             target.transform.position = Vector3.Lerp(target.transform.position, lineStart, factor * 0.1f);
-
             timeElapsed += Mathf.Min(Time.deltaTime, lerpDuration - timeElapsed);
-
             yield return null;
         }
 

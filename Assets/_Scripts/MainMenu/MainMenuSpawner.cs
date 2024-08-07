@@ -4,24 +4,21 @@ using UnityEngine;
 // Simplified spawn manager for the main menu background animation
 public class MainMenuSpawner : MonoBehaviour
 {
-    public Enemy[] enemies;
-    public GameObject enemyContainer;
-
-    private float xBoundary = 9.5f;
-    private float groundOffset = -2.3f;
-
-    private Vector2 spawnPos1;
-    private Vector2 spawnPos2;
+    [SerializeField] Enemy[] enemies;
+    [SerializeField] GameObject enemyContainer;
+    float xBoundary = 9.5f;
+    float groundOffset = -2.3f;
+    Vector2 spawnPos1;
+    Vector2 spawnPos2;
 
 
     void Start()
     {
         spawnPos1 = new Vector2(-xBoundary, groundOffset);
         spawnPos2 = new Vector2(xBoundary, groundOffset);
+        
         foreach (Enemy enemy in enemies)
-        {
             StartCoroutine(SpawnEnemy(enemy));
-        }
     }
 
     // Spawn enemies along the edges of the screen

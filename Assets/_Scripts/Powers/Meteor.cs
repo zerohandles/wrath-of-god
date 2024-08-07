@@ -1,11 +1,15 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
 public class Meteor : MonoBehaviour
 {
+    [Header("Movement")]
     [SerializeField] private float speed;
+
+    [Header("Audio")]
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip impactSound;
     
     ObjectPool<Meteor> _pool;
     Animator animator;
@@ -13,8 +17,6 @@ public class Meteor : MonoBehaviour
     readonly float targetXRange = 8.3f;
     readonly float targetY = -2.3f;
     bool isMoving = true;
-    public AudioSource audioSource;
-    public AudioClip impactSound;
 
 
     // Set a random target position on screen. Rotate to match angle of target position
@@ -29,7 +31,7 @@ public class Meteor : MonoBehaviour
 
     void Start() => animator = GetComponent<Animator>();
 
-    private void Update()
+    void Update()
     {
         if (!isMoving)
             return;
@@ -39,7 +41,7 @@ public class Meteor : MonoBehaviour
             StartCoroutine(TriggerExplosion());
 
         Vector3 direction = (target - transform.position).normalized;
-        transform.position += direction * speed * Time.deltaTime;
+        transform.position += speed * Time.deltaTime * direction;
 
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
@@ -59,9 +61,7 @@ public class Meteor : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
-        {
             StartCoroutine(TriggerExplosion());
-        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -70,12 +70,12 @@ public class Meteor : MonoBehaviour
             return;
 
         // Score any enemies hit
-        foreach (Enemy enemy in GameManager.instance.spawnManager.enemies)
+        foreach (Enemy enemy in GameManager.Instance.spawnManager.enemies)
         {
             if (collision.gameObject.CompareTag(enemy.tag))
             {
-                GameManager.instance.ChangeScore(enemy.value);
-                GameManager.instance.UpdateUI();
+                GameManager.Instance.ChangeScore(enemy.value);
+                GameManager.Instance.UpdateUI();
             }
         }
     }

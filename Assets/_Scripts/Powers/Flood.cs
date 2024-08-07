@@ -3,17 +3,16 @@ using UnityEngine;
 
 public class Flood : MonoBehaviour
 {
-    private Vector3 startingPos = new Vector3(0, -6.5f, 0);
-    private Vector3 endPos = new Vector3(0, 0.3f, 0);
     [SerializeField] float speed;
 
-    private readonly float pauseTime = 3;
-    private bool isRising = false;
-    private Vector3 target;
-
-    private FadeEffectAudio fader;
-    private float targetVolume;
-    private readonly float lerpDuration = 5;
+     FadeEffectAudio fader;
+     Vector3 startingPos = new Vector3(0, -6.5f, 0);
+     Vector3 endPos = new Vector3(0, 0.3f, 0);
+     Vector3 target;
+     float targetVolume;
+     readonly float lerpDuration = 5;
+     readonly float pauseTime = 3;
+     bool isRising = false;
 
     // Reset the flood position and target position when enabled
     void OnEnable()
@@ -25,10 +24,7 @@ public class Flood : MonoBehaviour
         StartCoroutine(fader.FadeAudio(targetVolume, lerpDuration));
     }
 
-    private void Awake()
-    {
-        fader = GetComponent<FadeEffectAudio>();
-    }
+    private void Awake() => fader = GetComponent<FadeEffectAudio>();
 
     // Slowly move towards the target postion
     void Update()
@@ -43,9 +39,7 @@ public class Flood : MonoBehaviour
             StartCoroutine(PauseMovement());
 
             if (target == startingPos)
-            {
                 gameObject.SetActive(false);
-            }
         }
     }
 
@@ -58,5 +52,4 @@ public class Flood : MonoBehaviour
         isRising = false;
         StartCoroutine(fader.FadeAudio(targetVolume, lerpDuration));
     }
-
 }

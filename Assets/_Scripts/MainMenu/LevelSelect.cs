@@ -6,14 +6,16 @@ using TMPro;
 
 public class LevelSelect : MonoBehaviour
 {
-    private Animator animator;
-    private SecondaryMenu menu;
+    [Header("Menu Elements")]
     [SerializeField] GameObject[] mercyIcon;
     [SerializeField] Button[] levelButtons;
     [SerializeField] Button secretLevelButton;
     [SerializeField] TextMeshProUGUI secretLevelText;
 
-    private void Start()
+    Animator animator;
+    SecondaryMenu menu;
+
+    void Start()
     {
         animator = GetComponent<Animator>();
         menu = GetComponent<SecondaryMenu>();
@@ -24,13 +26,10 @@ public class LevelSelect : MonoBehaviour
         for (int i = 0; i < levelButtons.Length; i++)
         {
             if (i + 1 > levelReached)
-            {
                 levelButtons[i].interactable = false;
-            }
+            // Enable icon if secret condition for that level was met
             if (PlayerPrefs.GetInt("level"+i) == 1)
-            {
                 mercyIcon[i].SetActive(true);
-            }
         }
 
         // If unlocked make the secret level button interactable
@@ -41,10 +40,7 @@ public class LevelSelect : MonoBehaviour
         }
     }
 
-    public void SelectLevel(int levelIndex)
-    {
-        StartCoroutine(LoadLevel(levelIndex));
-    }
+    public void SelectLevel(int levelIndex) => StartCoroutine(LoadLevel(levelIndex));
 
     // Load the selected level
     IEnumerator LoadLevel(int levelIndex)

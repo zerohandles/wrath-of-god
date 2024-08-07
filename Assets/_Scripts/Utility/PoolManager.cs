@@ -1,19 +1,17 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
 public class PoolManager : MonoBehaviour
 {
-    ObjectPool<LightningBolt> lightningPool;
+    [Header("Pool Prefabs")]
     [SerializeField] LightningBolt lightningPrefab;
+    ObjectPool<LightningBolt> lightningPool;
 
-    ObjectPool<BackgroundMeteor> backgroundMeteorPool;
     [SerializeField] BackgroundMeteor backgroundMeteorPrefab;
-
-    ObjectPool<Meteor> meteorPool;
+    ObjectPool<BackgroundMeteor> backgroundMeteorPool;
+    
     [SerializeField] Meteor meteorPrefab;
+    ObjectPool<Meteor> meteorPool;
 
 
     public static PoolManager Instance { get; private set; }

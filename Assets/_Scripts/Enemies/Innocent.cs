@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Innocent : MonoBehaviour
 {
-    private Animator animator;
-    private EnemyMovement movement;
+    Animator animator;
+    EnemyMovement movement;
 
     void Start()
     {
@@ -20,8 +20,6 @@ public class Innocent : MonoBehaviour
 
         // Disable colliders to prevent the innocent from dying in mid rescue animation
         foreach (Collider2D col in GetComponents<Collider2D>())
-        {
             col.enabled = false;
-        }
     }
 }

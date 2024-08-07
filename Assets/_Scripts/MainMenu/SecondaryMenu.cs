@@ -3,21 +3,17 @@ using UnityEngine;
 
 public class SecondaryMenu : MonoBehaviour
 {
-    private Animator animator;
-    public GameObject mainMenu;
-    public GameObject secondaryMenu;
-    public AudioSource audioSource;
-    public AudioClip scrollSound;
+    [Header("Menu Elements")]
+    [SerializeField] GameObject mainMenu;
+    [SerializeField] GameObject secondaryMenu;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip scrollSound;
+    
+    Animator animator;
 
-    void Start()
-    {
-        animator = GetComponent<Animator>();
-    }
+    void Start() => animator = GetComponent<Animator>();
 
-    public void BackButton()
-    {
-        StartCoroutine(Back());
-    }
+    public void BackButton() => StartCoroutine(Back());
 
     // Play the scroll closing animation and display the main menu.
     private IEnumerator Back()
@@ -30,8 +26,5 @@ public class SecondaryMenu : MonoBehaviour
         secondaryMenu.SetActive(false);
     }
 
-    public void PlaySFX()
-    {
-        audioSource.PlayOneShot(scrollSound);
-    }
+    public void PlaySFX() => audioSource.PlayOneShot(scrollSound);
 }

@@ -1,23 +1,29 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PowerButtons : MonoBehaviour
 {
-    public GameObject ufo;
-    public GameObject flood;
-    public GameObject meteorStorm;
-    private Player player;
+    [Header("Tornado Power")]
+    [SerializeField] float tornadoTimer = 27;
+    [SerializeField] Button tornadoButton;
 
-    [SerializeField] private float tornadoTimer = 27;
-    [SerializeField] private Button tornadoButton;
-    [SerializeField] private float floodTimer = 39;
-    [SerializeField] private Button floodButton;
-    [SerializeField] private float ufoTimer = 60;
-    [SerializeField] private Button ufoButton;
-    [SerializeField] private float meteorStormTimer = 20;
-    [SerializeField] private Button meteorStormButton;
+    [Header("Flood Power")]
+    [SerializeField] GameObject flood;
+    [SerializeField] float floodTimer = 39;
+    [SerializeField] Button floodButton;
+
+    [Header("UFO Power")]
+    [SerializeField] GameObject ufo;
+    [SerializeField] float ufoTimer = 60;
+    [SerializeField] Button ufoButton;
+
+    [Header("Meteor Storm Power")]
+    [SerializeField] GameObject meteorStorm;
+    [SerializeField] float meteorStormTimer = 20;
+    [SerializeField] Button meteorStormButton;
+    
+    Player player;
 
     // Disable all power buttons at the start of the level
     private void Start()

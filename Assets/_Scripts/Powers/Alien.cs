@@ -3,23 +3,20 @@ using UnityEngine;
 
 public class Alien : MonoBehaviour
 {
-    private GameObject target;
-    private Vector3 targetPos;
-    private Vector3 startingPos;
-    private readonly float offset = -0.32f;
-    private readonly float speed = 2f;
-    private bool hasTarget = false;
-    private bool abductedTarget = false;
+    GameObject target;
+    Animator animator;
+    FadeEffectAudio fader;
+    Vector3 targetPos;
+    Vector3 startingPos;
+    readonly float offset = -0.32f;
+    readonly float speed = 2f;
+    bool hasTarget = false;
+    bool abductedTarget = false;
 
-    private Animator animator;
     public GameObject alienMotherShip;
 
-    private FadeEffectAudio fader;
 
-    private void OnEnable()
-    {
-        StartCoroutine(FindTarget());
-    }
+    private void OnEnable() => StartCoroutine(FindTarget());
 
     void Awake()
     {
@@ -34,16 +31,13 @@ public class Alien : MonoBehaviour
 
         // Update the target's position every frame to follow moving targets
         if(target != null)
-        {
             targetPos = new Vector3(target.transform.position.x, offset, 0);
-        }
 
         transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
 
         // Executed when at the target position
         if(Vector3.Distance(transform.position, targetPos) < 0.0001f)
         {
-            
             if (hasTarget)
             {
                 StartCoroutine(AbductTarget());
@@ -70,12 +64,10 @@ public class Alien : MonoBehaviour
         {
             target = GameObject.FindGameObjectWithTag("Cow");
 
-            /* Disable the target's colliders to avoid the target being destroyed before
-            animations and coroutine's finish executing */
+            // Disable the target's colliders to avoid the target being destroyed before
+                //animations and coroutine's finish executing 
             foreach (Collider2D col in target.GetComponents<Collider2D>())
-            {
                 col.enabled = false;
-            }
             hasTarget = true;
             StartCoroutine(fader.FadeAudio(.35f, 2));
         }

@@ -3,39 +3,37 @@ using UnityEngine;
 
 public class AlienBoss : MonoBehaviour
 {
-    private Animator animator;
-    private Animator laserAnimator;
-    [SerializeField] private GameObject laser;
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private AudioClip explosionSound;
+    [Header("Ship FX")]
+    [SerializeField] GameObject laser;
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip explosionSound;
 
-    private bool isInPosition = false;
-    private Vector3 firingPos = new Vector3(0, 4.8f, 0);
-    private Vector3 startingPos;
-    private Vector3 targetPos;
+    Animator animator;
+    Animator laserAnimator;
+    Vector3 firingPos = new Vector3(0, 4.8f, 0);
+    Vector3 startingPos;
+    Vector3 targetPos;
+    bool isInPosition = false;
+    readonly float speed = 1f;
 
-    private readonly float speed = 1f;
 
-
-    private void OnEnable()
+    void OnEnable()
     {
         targetPos = firingPos;
         audioSource.Stop();
     }
 
-    private void Start()
+    void Start()
     {
         startingPos = transform.position;
         animator = GetComponent<Animator>();
         laserAnimator = laser.GetComponent<Animator>();
     }
 
-    private void Update()
+    void Update()
     {
         if (isInPosition)
-        {
             return;
-        }
 
         // Move towards the target position and take action.
         var step = speed * Time.deltaTime;
@@ -58,9 +56,7 @@ public class AlienBoss : MonoBehaviour
             isInPosition = false;
         }
         else if (targetPos != startingPos)
-        {
             StartCoroutine(FireLaser());
-        }
     }
 
     // Play laser animation and SFX.

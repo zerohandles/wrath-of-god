@@ -2,41 +2,39 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance;
-    public SpawnManager spawnManager;
-    private MenuUI menuUI;
-    private UITimer timer;
-    public AudioSource sFXSource;
-
     [Header("Units")]
     [SerializeField] int totalInnocentsInLevel;
     [HideInInspector] public int innocentsKilled = 0;
     [HideInInspector] public int totalKilled = 0;
 
     [Header("Score and Combo")]
-    [SerializeField] private float m_pointsToWin;
+    [SerializeField] float comboTimeLimit = 1.5f;
+    [SerializeField] float comboTimer = 0;
+    [SerializeField] float m_pointsToWin;
     public float PointsToWin { get; private set; }
     public float score;
     [HideInInspector] public float combo = 0;
-    [SerializeField] private float comboTimeLimit = 1.5f;
-    [SerializeField] private float comboTimer = 0;
 
     [Header("Victory Player Pref Data")]
-    [SerializeField] private int nextLevelNumber;
-    [SerializeField] private int currentLevelIndex;
+    [SerializeField] int nextLevelNumber;
+    [SerializeField] int currentLevelIndex;
     [HideInInspector] public bool isGameOver;
+
+    [Header("Misc.")]
+    [SerializeField] AudioSource sFXSource;
+    public SpawnManager spawnManager;
+    MenuUI menuUI;
+    UITimer timer;
+
+    public static GameManager Instance;
 
     void Awake()
     {
     #region "Singleton"
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != null)
-        {
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != null)
             Destroy(gameObject);
-        }
         #endregion
 
         spawnManager = gameObject.GetComponent<SpawnManager>();
@@ -45,18 +43,13 @@ public class GameManager : MonoBehaviour
         isGameOver = false;
     }
 
-    private void Start()
-    {
-        timer = GetComponent<UITimer>();
-    }
+    void Start() => timer = GetComponent<UITimer>();
 
-    private void Update()
+    void Update()
     {
         // Trigger game over if time runs out
         if (timer.TimeRemaining <= 0.0f && !isGameOver)
-        {
             GameOver();
-        }
 
         // Reset combo timer if new enemies aren't killed fast enough
         comboTimer += Time.deltaTime;
@@ -77,24 +70,18 @@ public class GameManager : MonoBehaviour
 
         // If player lost, set game over text and UI elements
         if(score < PointsToWin)
-        {
             menuUI.SetGameOverText(false);
-        }
 
         // If player won set victory text/UI element. Update player prefs with level complete
         else if (score >= PointsToWin)
         {
             menuUI.SetGameOverText(true);
             if (PlayerPrefs.GetInt("levelReached") < nextLevelNumber)
-            {
                 PlayerPrefs.SetInt("levelReached", nextLevelNumber);
-            }
 
             // Condition for unlocking the secret level
             if (innocentsKilled == totalInnocentsInLevel)
-            {
                 PlayerPrefs.SetInt("level" + currentLevelIndex, 1);
-            }
 
             PlayerPrefs.Save();
         }

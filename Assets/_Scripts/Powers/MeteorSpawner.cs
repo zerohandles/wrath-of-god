@@ -3,13 +3,11 @@ using UnityEngine;
 
 public class MeteorSpawner : MonoBehaviour
 {
+    [SerializeField] float meteorSpawnDelay;
+    [SerializeField] float meteorStormTimer;
+
     readonly float spawnPosY = 7;
     readonly float spawnPosXRange = 7;
-
-    [SerializeField] private float meteorSpawnDelay;
-    [SerializeField] private float meteorStormTimer;
-
-    public GameObject meteor;
 
     private void OnEnable()
     {
