@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,12 @@ public class PoolManager : MonoBehaviour
 {
     ObjectPool<LightningBolt> lightningPool;
     [SerializeField] LightningBolt lightningPrefab;
+
+    ObjectPool<BackgroundMeteor> backgroundMeteorPool;
+    [SerializeField] BackgroundMeteor backgroundMeteorPrefab;
+
+    ObjectPool<Meteor> meteorPool;
+    [SerializeField] Meteor meteorPrefab;
 
 
     public static PoolManager Instance { get; private set; }
@@ -28,8 +35,34 @@ public class PoolManager : MonoBehaviour
             t => t.gameObject.SetActive(true),
             t => t.gameObject.SetActive(false)
             );
+
+        backgroundMeteorPool = new ObjectPool<BackgroundMeteor>(
+            () =>
+            {
+                var meteor = Instantiate(backgroundMeteorPrefab);
+                meteor.SetPool(backgroundMeteorPool);
+                return meteor;
+            },
+            t => t.gameObject.SetActive(true),
+            t => t.gameObject.SetActive(false)
+            );
+
+        meteorPool = new ObjectPool<Meteor>(
+            () =>
+            {
+                var meteor = Instantiate(meteorPrefab);
+                meteor.SetPool(meteorPool);
+                return meteor;
+            },
+            t => t.gameObject.SetActive(true),
+            t => t.gameObject.SetActive(false)
+            );
     }
 
 
     public LightningBolt GetLightningBolt() => lightningPool.Get();
+
+    public BackgroundMeteor GetBackgroundMeteor() => backgroundMeteorPool.Get();
+
+    public Meteor GetMeteor() => meteorPool.Get();
 }

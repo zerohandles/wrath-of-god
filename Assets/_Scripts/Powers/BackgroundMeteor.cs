@@ -1,19 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class BackgroundMeteor : MonoBehaviour
 {
-    private Vector3 target;
-    private readonly float targetXRange = 8.3f;
-    private readonly float targetY = -2;
-    private readonly float lifeTime = 2;
-    private float timer = 0;
-
-    [SerializeField] private float speed;
+    [SerializeField] float speed;
+    
+    ObjectPool<BackgroundMeteor> _pool;
+    Vector3 target;
+    readonly float targetXRange = 8.3f;
+    readonly float targetY = -2;
+    readonly float lifeTime = 2;
+    float timer = 0;
 
     // Set a random target angle to move along
-    private void OnEnable()
+    void OnEnable()
     {
         target = new Vector3(Random.Range(-targetXRange, targetXRange), targetY, 0);
         Vector3 dir = (target - transform.position).normalized;
@@ -21,15 +21,17 @@ public class BackgroundMeteor : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, angle);
     }
 
-    private void Update()
+    void Update()
     {
         if (timer > lifeTime)
         {
-            // TODO: add object pooling for meteors
-            Destroy(gameObject);
+            timer = 0;
+            _pool.Release(this);
         }
 
         transform.Translate(speed * Time.deltaTime * Vector3.right, Space.Self);
         timer += Time.deltaTime;
     }
+
+    public void SetPool(ObjectPool<BackgroundMeteor> pool) => _pool = pool;
 }

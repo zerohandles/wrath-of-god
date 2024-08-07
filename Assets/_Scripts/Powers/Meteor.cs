@@ -1,28 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Meteor : MonoBehaviour
 {
-    private Animator animator;
-    private Vector3 target;
-    private readonly float targetXRange = 8.3f;
-    private readonly float targetY = -2;
-
     [SerializeField] private float speed;
-    private bool isMoving = true;
-
+    
+    ObjectPool<Meteor> _pool;
+    Animator animator;
+    Vector3 target;
+    readonly float targetXRange = 8.3f;
+    readonly float targetY = -2;
+    bool isMoving = true;
     public AudioSource audioSource;
     public AudioClip impactSound;
 
 
     // Set a random target position on screen. Rotate to match angle of target position
-    private void OnEnable()
+    void OnEnable()
     {
+        isMoving = true;
         target = new Vector3(Random.Range(-targetXRange, targetXRange), targetY, 0);
         Vector3 dir = (target - transform.position).normalized;
-        float angle = Vector2.SignedAngle(Vector3.right, dir);
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle);
+
+        Debug.Log($"Meteor enabled. Target: {target}, Direction: {dir}, Angle: {angle}");
     }
 
     void Start()
@@ -33,31 +37,33 @@ public class Meteor : MonoBehaviour
     private void Update()
     {
         if (!isMoving)
-        {
             return;
-        }
 
         transform.Translate(speed * Time.deltaTime * Vector3.right, Space.Self);
+        Debug.Log($"Meteor moving. Position: {transform.position}");
+    }
+
+    IEnumerator TriggerExplosion()
+    {
+        transform.rotation = Quaternion.identity;
+        audioSource.PlayOneShot(impactSound);
+        animator.SetTrigger("Impact");
+        isMoving = false;
+        yield return new WaitForSeconds(1);
+        _pool.Release(this);
     }
 
     // Destroy meteor when it hits the ground and play impact animation/SFX
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
-        {
-            transform.rotation = Quaternion.identity;
-            audioSource.PlayOneShot(impactSound);
-            animator.SetTrigger("Impact");
-            isMoving = false;
-            Destroy(gameObject,1f);
-        }
+            StartCoroutine(TriggerExplosion());
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.transform.GetComponent<EnemyMovement>())
-        {
             return;
-        }
 
         // Score any enemies hit
         foreach (Enemy enemy in GameManager.instance.spawnManager.enemies)
@@ -69,4 +75,6 @@ public class Meteor : MonoBehaviour
             }
         }
     }
+
+    public void SetPool(ObjectPool<Meteor> pool) => _pool = pool;
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3667013228154665875
+--- !u!1 &7707417301817302691
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7039220812849013302}
-  - component: {fileID: 188158355516803783}
+  - component: {fileID: 261794524046091502}
+  - component: {fileID: 2401475201517024751}
   m_Layer: 0
-  m_Name: BackgroundMeteorStorm
+  m_Name: PoolManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7039220812849013302
+--- !u!4 &261794524046091502
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3667013228154665875}
+  m_GameObject: {fileID: 7707417301817302691}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.08, y: 7.81, z: -0.02188435}
+  m_LocalPosition: {x: -55.160877, y: 26.11846, z: 2.1704605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &188158355516803783
+--- !u!114 &2401475201517024751
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3667013228154665875}
+  m_GameObject: {fileID: 7707417301817302691}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f21ff75ab1b15e5408d9a38687d21af7, type: 3}
+  m_Script: {fileID: 11500000, guid: 0986072d9f09f1044bed59e311d837dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meteorPrefab: {fileID: 4546566226823482918, guid: 00e1657826a108546ac319f4d5d09121, type: 3}
-  meteorSpawnDelay: 0.3
+  lightningPrefab: {fileID: 3222215428300182484, guid: b4c870d6484e5254e90365a177be34be, type: 3}
+  backgroundMeteorPrefab: {fileID: 8501615663384263643, guid: 00e1657826a108546ac319f4d5d09121, type: 3}
+  meteorPrefab: {fileID: 3393087099631354104, guid: cf976c7c1e7904642a7ff00ddb2a727a, type: 3}
