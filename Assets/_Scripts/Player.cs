@@ -20,8 +20,9 @@ public class Player : MonoBehaviour
     [SerializeField] Vector2 cursorOffset = Vector2.zero;
     [SerializeField] GameObject tornado;
     [SerializeField] Texture2D tornadoCursor;
-    [SerializeField] CursorMode cursorMode = CursorMode.Auto;
+    CursorMode cursorMode = CursorMode.Auto;
     bool tornadoReady;
+
 
 
     void Update()

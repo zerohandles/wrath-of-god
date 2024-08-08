@@ -46,7 +46,7 @@ public class MainMenuUI : MonoBehaviour
     private IEnumerator StartTutorial()
     {
         tutorialLevelPrompt.SetActive(false);
-
+        StartCoroutine(CloseScroll());
         yield return new WaitForSeconds(1);
         SceneManager.LoadScene("TutorialLevel");
     }
